@@ -540,6 +540,82 @@
         footer { background: var(--black); text-align: center; padding: 2.3rem 2rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.05); }
         footer p + p { margin-top: 0.7rem; font-size: 0.87rem; }
 
+        /* BONUS BANNER */
+        .bonus-banner {
+            background: var(--black);
+            color: rgba(255,255,255,0.88);
+            padding: 0.85rem 2rem;
+            display: flex; align-items: center; justify-content: center;
+            gap: 1rem; flex-wrap: wrap;
+            font-size: 0.92rem;
+            border-bottom: 2px solid var(--orange);
+            text-align: center;
+        }
+        .bonus-banner strong { color: var(--orange-light); }
+        .bonus-banner-dot {
+            width: 8px; height: 8px; background: var(--orange);
+            border-radius: 50%; flex-shrink: 0;
+            animation: blink 1.5s infinite;
+        }
+        .bonus-banner-count {
+            background: var(--orange);
+            color: white; font-weight: 700; font-size: 0.78rem;
+            padding: 0.25rem 0.75rem; border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        /* BONUS SLOTS COUNTER */
+        .bonus-slots-counter {
+            margin: 1.5rem 0 2rem;
+        }
+        .bonus-slots-bar-wrap {
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px; height: 10px;
+            overflow: hidden; margin-bottom: 0.7rem;
+        }
+        .bonus-slots-bar {
+            height: 100%; border-radius: 50px;
+            background: linear-gradient(90deg, var(--orange-dark), var(--orange));
+            width: 27%; transition: width 1s ease;
+        }
+        .bonus-slots-text {
+            display: flex; justify-content: space-between;
+            font-size: 0.88rem;
+        }
+        .bonus-slots-taken { color: rgba(255,255,255,0.55); }
+        .bonus-slots-left { color: var(--orange-light); font-weight: 600; }
+        .bonus-slots-left strong { font-size: 1.05rem; }
+
+        /* BONUS VALUE ROW */
+        .bonus-value-row {
+            display: flex; align-items: center; justify-content: center;
+            gap: 1.5rem; margin: 2rem 0 1.5rem;
+            padding: 1.2rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+        }
+        .bonus-value-item { text-align: center; }
+        .bonus-value-label { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
+        .bonus-value-price { font-size: 1.5rem; font-weight: 800; color: rgba(255,255,255,0.4); }
+        .strikethrough { text-decoration: line-through; }
+        .bonus-value-arrow { font-size: 1.5rem; color: var(--orange); font-weight: 800; }
+        .bonus-value-free { font-size: 1.8rem; font-weight: 900; color: var(--success); font-family: 'DM Sans', sans-serif; }
+
+        /* PRICE INCLUDES */
+        .price-includes {
+            background: var(--off-white);
+            border-radius: 10px; padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0 1.4rem; text-align: left;
+        }
+        .price-includes-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-mid); margin-bottom: 0.8rem; }
+        .price-includes-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.97rem; color: var(--charcoal); padding: 0.4rem 0; border-bottom: 1px solid var(--gray-light); }
+        .price-includes-item:last-child { border-bottom: none; }
+        .price-includes-item span:first-child { color: var(--success); font-weight: 700; flex-shrink: 0; }
+        .bonus-highlight { background: rgba(232,93,4,0.06); border-radius: 6px; padding: 0.5rem 0.6rem !important; margin: 0.3rem 0; border: 1px solid rgba(232,93,4,0.2) !important; }
+        .bonus-highlight span:first-child { font-size: 1.1rem; }
+        .price-includes-free { margin-left: auto; background: var(--success); color: white; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 20px; white-space: nowrap; }
+
         /* BONUS */
         .bonus-section { background: var(--off-white); }
 
@@ -659,8 +735,12 @@
             animation: blink 1.5s infinite;
         }
 
+        .bonus-mockup { flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .bonus-mockup-img { width: 260px; max-width: 100%; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5)); }
+
         @media (max-width: 768px) {
             .bonus-card { flex-direction: column; gap: 1.2rem; }
+            .bonus-mockup-img { width: 200px; }
             .bonus-box { padding: 2rem 1.5rem; }
         }
 
@@ -703,12 +783,12 @@
             </div>
 
             <h1 class="hero-headline">
-                Aprenda a escolher o perfume certo para você — mesmo que hoje você não entenda <span class="highlight">absolutamente nada</span> de perfumaria.
+                Chega de usar qualquer perfume. Aprenda a escolher o que faz as pessoas se virarem quando você <span class="highlight">entra na sala.</span>
             </h1>
             </h1>
 
             <p class="hero-subheadline">
-                Aulas curtas, diretas e práticas.<br>
+                Do zero ao expert — mesmo que hoje você não entenda absolutamente nada de perfumaria.<br>
                 <strong>Sem enrolação. Sem desperdício. Com resultado real.</strong>
             </p>
 
@@ -725,6 +805,10 @@
                     <span class="hci">◆</span>
                     <span>Técnicas avançadas: layering, coleção equilibrada e respiro olfativo</span>
                 </li>
+                <li class="hero-checklist-item">
+                    <span class="hci">◆</span>
+                    <span>🎁 <strong>Bônus exclusivo:</strong> app com I.A. integrada para os primeiros 100 alunos</span>
+                </li>
             </ul>
 
             <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero acesso ao curso agora!</a>
@@ -736,6 +820,13 @@
     </section>
 
     <div class="divider"></div>
+
+    <!-- BONUS URGENCY BANNER -->
+    <div class="bonus-banner">
+        <div class="bonus-banner-dot"></div>
+        <span>⚡ <strong>Bônus exclusivo:</strong> primeiros 100 alunos ganham acesso vitalício ao <strong>app com I.A. integrada</strong> — Mapa da Coleção Perfeita</span>
+        <span class="bonus-banner-count" id="bonus-slots">73 vagas restantes</span>
+    </div>
 
     <!-- INTRO / PROBLEM -->
     <section class="intro-section">
@@ -950,26 +1041,55 @@
     <section class="bonus-section">
         <div class="container">
             <div class="bonus-box">
-                <div class="bonus-tag">🎁 BÔNUS EXCLUSIVO</div>
+                <div class="bonus-tag">🎁 BÔNUS EXCLUSIVO — INCLUSO NO CURSO</div>
                 <h2 class="bonus-title">Para os Primeiros <em>100 Alunos</em></h2>
+
+                <div class="bonus-slots-counter">
+                    <div class="bonus-slots-bar-wrap">
+                        <div class="bonus-slots-bar" id="bonus-bar"></div>
+                    </div>
+                    <div class="bonus-slots-text">
+                        <span class="bonus-slots-taken" id="bonus-taken">27 alunos já garantiram</span>
+                        <span class="bonus-slots-left"><strong id="bonus-left">73</strong> vagas restantes</span>
+                    </div>
+                </div>
+
                 <div class="bonus-card">
-                    <div class="bonus-icon">📱</div>
+                    <div class="bonus-mockup">
+                        <img src="app-mockup.png" alt="Mapa da Coleção Perfeita — App com I.A." class="bonus-mockup-img">
+                    </div>
                     <div class="bonus-content">
-                        <h3 class="bonus-name">Acesso Vitalício ao Mapa da Coleção Perfeita</h3>
+                        <h3 class="bonus-name">Mapa da Coleção Perfeita</h3>
                         <p class="bonus-description">
                             Aplicativo com <strong>I.A. integrada</strong> que analisa, sugere e classifica sua coleção baseado nos seus gostos — para você nunca mais errar na próxima compra.
                         </p>
                         <div class="bonus-features">
                             <span class="bonus-feature"><span>✓</span> Diagnóstico personalizado da sua coleção</span>
                             <span class="bonus-feature"><span>✓</span> Sugestões de compra baseadas no seu perfil</span>
+                            <span class="bonus-feature"><span>✓</span> Classificação inteligente por ocasião, clima e perfil</span>
                             <span class="bonus-feature"><span>✓</span> Acesso <strong>vitalício</strong> — paga uma vez, usa para sempre</span>
                         </div>
                     </div>
                 </div>
+
+                <div class="bonus-value-row">
+                    <div class="bonus-value-item">
+                        <span class="bonus-value-label">Valor separado</span>
+                        <span class="bonus-value-price strikethrough">R$ 97</span>
+                    </div>
+                    <div class="bonus-value-arrow">→</div>
+                    <div class="bonus-value-item">
+                        <span class="bonus-value-label">Para os primeiros 100 alunos</span>
+                        <span class="bonus-value-free">GRÁTIS</span>
+                    </div>
+                </div>
+
                 <div class="bonus-urgency">
                     <div class="bonus-urgency-dot"></div>
-                    <span>Vagas limitadas — <strong>apenas 100 alunos</strong> terão acesso a este bônus</span>
+                    <span>Quando as 100 vagas acabarem, o bônus <strong>desaparece definitivamente</strong></span>
                 </div>
+
+                <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="display:block;text-align:center;margin-top:2rem;" onclick="fbq('track', 'AddToCart');">Garantir Minha Vaga + Bônus</a>
             </div>
         </div>
     </section>
@@ -995,38 +1115,6 @@
         </div>
     </section>
 
-    <!-- WHY IT WORKS -->
-    <section class="why-section">
-        <div class="container">
-            <span class="section-label">Por que funciona</span>
-            <h2 class="section-title">O Método que <em>Ninguém Ensinou</em></h2>
-            <p class="section-subtitle">Não é conteúdo genérico de YouTube. É um sistema estruturado para quem quer resultado real.</p>
-
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3 class="why-card-title"><span class="why-card-icon">🧪</span> Aprenda Fazendo — Aulas com Exercícios Práticos</h3>
-                    <div class="why-card-content">
-                        <p>Cada aula foi pensada para que você <strong>aplique imediatamente</strong> o que aprendeu. O teste dos 3 momentos, a análise comparativa, a montagem do trio inicial — tudo prático.</p>
-                        <ul class="why-list">
-                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Progressão lógica do simples ao avançado</span></li>
-                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Aulas curtas para assistir no intervalo ou no ônibus</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="why-card">
-                    <h3 class="why-card-title"><span class="why-card-icon">🧠</span> Conceito Exclusivo — Respiro Olfativo</h3>
-                    <div class="why-card-content">
-                        <p>Você vai aprender sobre <strong>fadiga olfativa</strong> e o conceito único de <strong>respiro olfativo</strong> — como estruturar sua coleção para que cada uso seja especial e seu nariz nunca se acostume.</p>
-                        <ul class="why-list">
-                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Sistema de rotação semanal estruturado</span></li>
-                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Arquitetura de coleção por tamanho e objetivo</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- COMPARISON -->
     <section class="comparison-section">
         <div class="container">
@@ -1036,7 +1124,7 @@
             <div class="comparison-grid">
                 <div class="comparison-card real">
                     <h3 class="comparison-title real">✓ Curso Prático da Perfumaria</h3>
-                    <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Sistema estruturado em 3 módulos e 12 aulas — do zero ao avançado</span></div>
+                    <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Sistema estruturado em 3 módulos e 10 aulas — do zero ao avançado</span></div>
                     <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Aprende a identificar seu perfil olfativo e escolher com autonomia</span></div>
                     <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Técnicas de layering e respiro olfativo que ninguém ensina</span></div>
                     <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Sabe exatamente o que comprar antes de entrar na loja</span></div>
@@ -1093,6 +1181,14 @@
                 <div class="price-fire">🔥</div>
                 <div class="price-value">R$ 147</div>
                 <p class="price-period">Pagamento Único — Acesso Completo ao Curso</p>
+
+                <div class="price-includes">
+                    <div class="price-includes-title">O que está incluso:</div>
+                    <div class="price-includes-item"><span>✓</span> Curso Prático da Perfumaria — 10 aulas em vídeo</div>
+                    <div class="price-includes-item bonus-highlight"><span>🎁</span> <strong>Bônus: App Mapa da Coleção Perfeita com I.A.</strong> <span class="price-includes-free">GRÁTIS</span></div>
+                    <div class="price-includes-item"><span>✓</span> Acesso por 12 meses + garantia de 7 dias</div>
+                </div>
+
                 <div class="price-comparison">Menos que <strong>um frasco de perfume importado</strong> — e o suficiente para <strong>economizar R$ 500+ por ano</strong> evitando compras erradas.</div>
                 <p class="price-savings">💰 O curso se paga na primeira compra estratégica</p>
 
@@ -1184,15 +1280,15 @@
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2 class="section-title">A Escolha é Sua:<br><em>Continuar Errando ou Acertar de Vez?</em></h2>
-            <p class="section-subtitle">Centenas de homens já transformaram sua relação com a perfumaria. Você vai ficar de fora?</p>
+            <h2 class="section-title">Pronto para <em>Escolher o Perfume Certo</em><br>de Vez?</h2>
+            <p class="section-subtitle">Junte-se a centenas de homens que pararam de errar na compra e passaram a usar perfume com confiança.</p>
 
             <div class="urgency-badge">
                 <p class="urgency-badge-text">⚡ Vagas com desconto — por tempo limitado</p>
                 <p class="urgency-badge-subtext">Preço pode aumentar a qualquer momento</p>
             </div>
 
-            <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="font-size:1.15rem; padding:1.3rem 4rem;" onclick="fbq('track', 'Purchase', {value: 147.00, currency: 'BRL'});">Quero o Curso Agora</a>
+            <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="font-size:1.15rem; padding:1.3rem 4rem;" onclick="fbq('track', 'Purchase', {value: 147.00, currency: 'BRL'});">Quero aprender a escolher o perfume certo</a>
 
             <p style="margin-top:2rem; color:rgba(255,255,255,0.45); font-size:0.9rem;">
                 ✓ Acesso imediato após pagamento &nbsp;·&nbsp; ✓ Garantia de 7 dias &nbsp;·&nbsp; ✓ Suporte via WhatsApp
@@ -1208,7 +1304,7 @@
 
     <!-- FLOATING CTA -->
     <div class="floating-cta">
-        <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Começar Agora</a>
+        <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero aprender a escolher o perfume certo</a>
     </div>
 
     <script>
@@ -1302,6 +1398,20 @@
                 else if (pct > 50 && scrollDepth < 50) { fbq('trackCustom','Scroll50'); scrollDepth = 50; }
                 else if (pct > 75 && scrollDepth < 75) { fbq('trackCustom','Scroll75'); scrollDepth = 75; }
             });
+
+            // Bonus slots bar animation
+            const bonusBar = document.getElementById('bonus-bar');
+            if (bonusBar) {
+                const bonusObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => { bonusBar.style.width = '27%'; }, 200);
+                            bonusObserver.disconnect();
+                        }
+                    });
+                }, { threshold: 0.3 });
+                bonusObserver.observe(bonusBar);
+            }
         });
     </script>
 
