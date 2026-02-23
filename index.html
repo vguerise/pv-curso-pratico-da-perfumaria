@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa da Coleção Perfeita - Nunca Mais Compre o Perfume Errado</title>
-    <meta name="description" content="O único curso de perfumaria masculina com App + IA integrado. Aprenda a montar sua coleção perfeita sem erros.">
+    <title>Curso Prático da Perfumaria - Do Zero ao Colecionador Consciente</title>
+    <meta name="description" content="O curso mais completo de perfumaria masculina do Brasil. 3 módulos, 10 aulas, do absoluto zero ao colecionador que sabe exatamente o que comprar.">
     
     <!-- Meta Pixel Code -->
     <script>
@@ -22,2103 +22,1008 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=804720092315209&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-blue: #2B5F7F;
-            --accent-teal: #4A9B8E;
-            --warm-cream: #F8F6F3;
-            --soft-gray: #E8E6E3;
-            --text-dark: #2C3E50;
-            --text-medium: #5D6D7E;
+            --orange: #E85D04;
+            --orange-light: #F48C06;
+            --orange-dark: #C14B00;
+            --orange-muted: rgba(232, 93, 4, 0.1);
+            --black: #111111;
+            --black-soft: #1A1A1A;
+            --charcoal: #2D2D2D;
+            --gray-dark: #444444;
+            --gray-mid: #777777;
+            --gray-light: #E8E8E8;
             --white: #FFFFFF;
-            --gold-accent: #D4AF37;
-            --success-green: #52A675;
-            --alert-coral: #E07A5F;
+            --off-white: #F8F8F8;
+            --success: #2A9D5C;
+            --danger: #D62828;
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--warm-cream);
-            color: var(--text-dark);
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--black);
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; }
+
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 4rem 0; }
+
+        .section-label {
+            display: block;
+            text-align: center;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
             font-weight: 700;
-            line-height: 1.2;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 0.8rem;
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 85vh;
-            background: linear-gradient(135deg, rgba(75, 155, 142, 0.05) 0%, rgba(43, 95, 127, 0.08) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .section-title {
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
             text-align: center;
-            padding: 3rem 2rem 2rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .section-title em { font-style: normal; color: var(--orange); }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--gray-mid);
+            margin-bottom: 3rem;
+            max-width: 660px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CTA */
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.25s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            animation: ctaPulse 2.5s ease-in-out infinite;
+        }
+
+        .cta-button:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(232, 93, 4, 0.45);
+            animation: none;
+        }
+
+        @keyframes ctaPulse {
+            0%,100% { box-shadow: 0 5px 22px rgba(232,93,4,0.3); }
+            50% { box-shadow: 0 8px 35px rgba(232,93,4,0.5); }
+        }
+
+        /* Floating */
+        .whatsapp-float {
+            position: fixed;
+            width: 56px; height: 56px;
+            bottom: 100px; right: 22px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.25);
+            z-index: 999;
+            transition: all 0.3s;
+            animation: waPulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        @keyframes waPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            50% { box-shadow: 0 0 0 13px rgba(37,211,102,0); }
+        }
+
+        .floating-cta { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+        .floating-cta .cta-button { padding: 0.85rem 1.7rem; font-size: 0.92rem; box-shadow: 0 8px 28px rgba(232,93,4,0.4); }
+
+        .live-viewers {
+            position: fixed; top: 80px; right: 20px;
+            background: white;
+            border: 2px solid var(--orange);
+            border-radius: 50px;
+            padding: 0.5rem 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 998;
+            display: flex; align-items: center; gap: 0.5rem;
+            animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn { from { transform: translateX(150px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        .live-dot { width: 8px; height: 8px; background: #ff4444; border-radius: 50%; animation: blink 1.5s infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .live-viewers-text { font-size: 0.82rem; font-weight: 600; color: var(--black); }
+        .live-viewers-number { color: var(--orange); font-weight: 800; }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            background: var(--black);
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
             position: relative;
             overflow: hidden;
         }
 
         .hero::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute; inset: 0;
             background-image: url('images/victor-terno.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            opacity: 0.18;
-            z-index: 1;
+            background-size: cover; background-position: center;
+            opacity: 0.1; z-index: 1;
         }
 
         .hero::after {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, 
-                rgba(248, 246, 243, 0.75) 0%, 
-                rgba(248, 246, 243, 0.65) 50%, 
-                rgba(248, 246, 243, 0.75) 100%);
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(232,93,4,0.07) 0%, transparent 65%);
             z-index: 1;
         }
 
-        .hero-container {
-            max-width: 900px;
-            width: 100%;
-            position: relative;
-            z-index: 2;
-        }
+        .hero-container { max-width: 880px; width: 100%; position: relative; z-index: 2; }
 
-        .hero-content {
-            z-index: 2;
-            position: relative;
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(232,93,4,0.15);
+            border: 1px solid rgba(232,93,4,0.35);
+            color: var(--orange-light);
+            padding: 0.45rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.82rem; font-weight: 600; letter-spacing: 1px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
         .hero-question-box {
-            background: linear-gradient(135deg, rgba(224, 122, 95, 0.12), rgba(224, 122, 95, 0.08));
-            border-left: 4px solid var(--alert-coral);
-            padding: 1.2rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
+            background: rgba(232,93,4,0.09);
+            border-left: 4px solid var(--orange);
+            padding: 1.1rem 1.4rem;
+            border-radius: 0 8px 8px 0;
+            margin: 0 auto 2.5rem;
+            display: flex; align-items: flex-start; gap: 1rem;
+            max-width: 660px; text-align: left;
         }
 
-        .hero-question-icon {
-            font-size: 1.8rem;
-            flex-shrink: 0;
-            color: var(--alert-coral);
-        }
-
-        .hero-question-text {
-            font-size: 1.05rem;
-            color: var(--text-dark);
-            line-height: 1.5;
-            font-weight: 600;
-            text-align: left;
-        }
+        .hero-question-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .hero-question-text { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.5; font-weight: 500; }
 
         .hero-headline {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 400;
-            color: var(--text-dark);
-            line-height: 1.3;
+            font-size: clamp(1.9rem, 4.5vw, 3rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.28;
             margin-bottom: 1.5rem;
-            text-align: center;
         }
 
-        .hero-headline .highlight {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
+        .hero-headline .highlight { color: var(--orange); }
 
         .hero-subheadline {
-            font-size: clamp(1.15rem, 2vw, 1.5rem);
-            color: var(--text-medium);
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            color: rgba(255,255,255,0.68);
             line-height: 1.6;
-            margin-bottom: 2rem;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .hero-subheadline strong {
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-
-        .hero-checklist {
-            list-style: none;
             margin-bottom: 2.5rem;
-            padding: 0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
+
+        .hero-subheadline strong { color: white; }
+
+        .hero-checklist { list-style: none; margin: 0 auto 3rem; max-width: 640px; }
 
         .hero-checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-            color: var(--text-dark);
-            line-height: 1.6;
-            text-align: left;
-        }
-
-        .hero-checklist-icon {
-            color: var(--success-green);
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            margin-top: 0.1rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-question-box {
-                margin-left: 1rem;
-                margin-right: 1rem;
-            }
-
-            .hero::before {
-                opacity: 0.15;
-            }
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--success-green) 0%, var(--accent-teal) 100%);
-            color: white;
-            padding: 1.3rem 3rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(82, 166, 117, 0.25);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: none;
-            cursor: pointer;
-            animation: ctaPulse 2.5s ease-in-out infinite;
-        }
-
-        @keyframes ctaPulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 10px 30px rgba(82, 166, 117, 0.25);
-            }
-            50% {
-                transform: scale(1.03);
-                box-shadow: 0 12px 35px rgba(82, 166, 117, 0.35);
-            }
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(82, 166, 117, 0.5);
-            animation: none;
-        }
-
-        .cta-button::after {
-            content: ' →';
-            margin-left: 8px;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Section */
-        section {
-            padding: 3.5rem 0;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            text-align: center;
-            margin-bottom: 1rem;
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--text-dark);
-        }
-
-        .section-title span {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Problem Section */
-        .problem-section {
-            background: var(--white);
-            border-top: 1px solid var(--soft-gray);
-            border-bottom: 1px solid var(--soft-gray);
-        }
-
-        .problem-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .problem-hook {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            margin-bottom: 2rem;
-            line-height: 1.4;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-
-        .problem-hook strong {
-            color: var(--alert-coral);
-            font-weight: 700;
-        }
-
-        .problem-text {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-medium);
-            line-height: 1.7;
-        }
-
-        .imagine-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-top: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Proust Section */
-        .proust-section {
-            background: linear-gradient(135deg, rgba(43, 95, 127, 0.05) 0%, rgba(75, 155, 142, 0.05) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .proust-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(75, 155, 142, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .proust-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .proust-badge {
-            display: inline-block;
-            background: var(--white);
-            color: var(--primary-blue);
-            padding: 0.6rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 2px solid var(--primary-blue);
-        }
-
-        .proust-intro {
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            font-style: italic;
-        }
-
-        .proust-content {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(43, 95, 127, 0.1);
-            border-left: 5px solid var(--accent-teal);
-        }
-
-        .proust-text {
-            font-size: 1.15rem;
-            color: var(--text-medium);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .proust-text strong {
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-
-        .proust-highlight {
-            background: linear-gradient(135deg, rgba(75, 155, 142, 0.1), rgba(43, 95, 127, 0.1));
-            padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-            border: 2px solid var(--accent-teal);
-        }
-
-        .proust-highlight-title {
-            font-size: 1.3rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .proust-highlight-text {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            line-height: 1.7;
-            text-align: center;
-        }
-
-        /* Solution Section */
-        .solution-section {
-            background: var(--white);
-        }
-
-        .solution-intro {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .course-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 2px solid var(--soft-gray);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(43, 95, 127, 0.15);
-            border-color: var(--accent-teal);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-
-        .feature-description {
-            color: var(--text-medium);
+            display: flex; align-items: flex-start; gap: 1rem;
+            margin-bottom: 0.9rem;
             font-size: 1rem;
-            line-height: 1.6;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.5; text-align: left;
         }
 
-        /* Modules Section */
-        .modules-section {
-            background: linear-gradient(135deg, rgba(43, 95, 127, 0.03) 0%, rgba(75, 155, 142, 0.03) 100%);
-        }
+        .hci { color: var(--orange); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.15rem; }
 
-        .modules-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+        .divider { height: 4px; background: linear-gradient(90deg, transparent, var(--orange), transparent); }
 
-        .module-card {
+        /* INTRO */
+        .intro-section { background: var(--off-white); border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); }
+
+        .intro-box {
             background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 2px solid var(--soft-gray);
-            transition: all 0.3s ease;
-            position: relative;
+            border: 2px solid var(--gray-light);
+            border-left: 6px solid var(--orange);
+            border-radius: 12px;
+            padding: 2.5rem 3rem;
+            max-width: 800px; margin: 0 auto;
         }
 
-        .module-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
-            border-radius: 20px 0 0 20px;
-        }
-
-        .module-card:hover {
-            border-color: var(--accent-teal);
-            box-shadow: 0 10px 30px rgba(43, 95, 127, 0.1);
-            transform: translateX(5px);
-        }
-
-        .module-number {
-            color: var(--accent-teal);
-            font-size: 0.9rem;
+        .intro-hook {
+            font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+            color: var(--black);
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 1.5rem; text-align: center;
         }
 
-        .module-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
+        .intro-hook strong { color: var(--orange); }
+        .intro-text { font-size: 1.08rem; color: var(--gray-dark); line-height: 1.8; margin-bottom: 1.1rem; }
+        .intro-text strong { color: var(--black); font-weight: 700; }
+        .intro-cta-line { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 700; text-align: center; color: var(--orange); margin-top: 1.8rem; font-style: italic; }
 
-        .module-description {
-            color: var(--text-medium);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
+        /* PAIN */
+        .pain-section { background: var(--white); }
 
-        /* Pain Points Section */
-        .pain-section {
-            background: var(--white);
-        }
-
-        .pain-intro {
-            text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            color: var(--text-medium);
-        }
-
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .pain-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.4rem; max-width: 840px; margin: 0 auto; }
 
         .pain-card {
-            background: linear-gradient(135deg, rgba(224, 122, 95, 0.05), rgba(224, 122, 95, 0.02));
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid rgba(224, 122, 95, 0.3);
+            background: var(--off-white);
+            padding: 1.7rem 1.7rem 1.7rem 4rem;
+            border-radius: 10px;
+            border: 2px solid var(--gray-light);
             position: relative;
-            padding-left: 4rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s; cursor: pointer;
         }
 
-        .pain-card:hover {
-            border-color: var(--alert-coral);
-            box-shadow: 0 5px 20px rgba(224, 122, 95, 0.15);
-        }
-
-        .pain-card {
-            cursor: pointer;
-        }
+        .pain-card:hover { border-color: var(--orange); box-shadow: 0 4px 18px rgba(232,93,4,0.1); }
 
         .pain-checkbox {
-            position: absolute;
-            left: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 28px;
-            height: 28px;
-            border: 3px solid var(--alert-coral);
-            border-radius: 6px;
-            background: white;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            position: absolute; left: 1.3rem; top: 50%; transform: translateY(-50%);
+            width: 26px; height: 26px;
+            border: 2.5px solid var(--orange); border-radius: 5px;
+            background: white; transition: all 0.3s;
         }
 
-        .pain-card.checked .pain-checkbox {
-            background: var(--success-green);
-            border-color: var(--success-green);
-        }
+        .pain-card.checked .pain-checkbox { background: var(--success); border-color: var(--success); }
+        .pain-card.checked .pain-checkbox::after { content: '✓'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: white; font-size: 15px; font-weight: bold; }
 
-        .pain-card.checked .pain-checkbox::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .pain-text {
-            font-size: 1.05rem;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+        .pain-text { font-size: 0.98rem; color: var(--charcoal); line-height: 1.5; }
 
         .pain-verdict {
-            text-align: center;
-            margin-top: 3rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            background: linear-gradient(135deg, rgba(43, 95, 127, 0.1), rgba(75, 155, 142, 0.1));
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 2px solid var(--accent-teal);
-            opacity: 0.5;
-            transition: all 0.3s ease;
+            text-align: center; margin: 2.5rem auto 0;
+            font-size: 1.25rem; font-weight: 700; color: var(--black);
+            background: var(--orange-muted);
+            padding: 1.4rem; border-radius: 10px; border: 2px solid var(--orange);
+            opacity: 0.5; transition: all 0.3s;
+            max-width: 840px;
         }
 
-        .pain-verdict.active {
-            opacity: 1;
-            animation: verdictGlow 1.5s ease-in-out infinite;
-        }
-
-        @keyframes verdictGlow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(75, 155, 142, 0.3), 0 0 30px rgba(82, 166, 117, 0.2);
-                border-color: var(--accent-teal);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(75, 155, 142, 0.5), 0 0 40px rgba(82, 166, 117, 0.4);
-                border-color: var(--success-green);
-            }
-        }
-
-        /* Comparison Section */
-        .comparison-section {
-            background: linear-gradient(135deg, rgba(43, 95, 127, 0.03) 0%, rgba(75, 155, 142, 0.03) 100%);
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1100px;
-            margin: 3rem auto;
-        }
-
-        .comparison-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 3px solid var(--soft-gray);
-        }
-
-        .comparison-card.fake {
-            border-color: var(--alert-coral);
-        }
-
-        .comparison-card.real {
-            border-color: var(--success-green);
-            box-shadow: 0 15px 40px rgba(82, 166, 117, 0.2);
-            position: relative;
-        }
-
-        .comparison-card.real::before {
-            content: '⭐ RECOMENDADO';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--success-green), var(--accent-teal));
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .comparison-title {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .comparison-title.fake {
-            color: var(--alert-coral);
-        }
-
-        .comparison-title.real {
-            color: var(--success-green);
-        }
-
-        .comparison-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
-
-        .comparison-icon {
-            margin-right: 1rem;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            margin-top: 0.2rem;
-        }
-
-        .comparison-icon.cross {
-            color: var(--alert-coral);
-        }
-
-        .comparison-icon.check {
-            color: var(--success-green);
-        }
-
-        /* Price Section */
-        .price-section {
-            background: var(--white);
-            text-align: center;
-        }
-
-        .price-questions {
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .price-question {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-medium);
-            font-style: italic;
-        }
-
-        .price-reality {
-            font-size: 1.4rem;
-            margin: 2rem 0;
-            color: var(--text-dark);
-            line-height: 1.7;
-        }
-
-        .price-box {
-            background: linear-gradient(135deg, rgba(75, 155, 142, 0.05), rgba(43, 95, 127, 0.05));
-            border: 3px solid var(--accent-teal);
-            border-radius: 25px;
-            padding: 3rem;
-            max-width: 600px;
-            margin: 3rem auto;
-            box-shadow: 0 20px 60px rgba(43, 95, 127, 0.15);
-        }
-
-        .price-fire {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .price-value {
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .price-period {
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            margin-bottom: 1.5rem;
-        }
-
-        .price-comparison {
-            font-size: 1.1rem;
-            color: var(--text-medium);
-            margin-bottom: 2rem;
-            padding: 1.2rem;
-            background: var(--white);
-            border-radius: 12px;
-        }
-
-        .price-savings {
-            font-size: 1.4rem;
-            color: var(--success-green);
-            font-weight: 700;
-            margin-bottom: 2rem;
-        }
-
-        .guarantee {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--soft-gray);
-        }
-
-        .guarantee-badge {
-            display: inline-block;
-            background: var(--success-green);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .guarantee-text {
-            color: var(--text-medium);
-            font-size: 1rem;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            background: linear-gradient(135deg, rgba(43, 95, 127, 0.03) 0%, rgba(75, 155, 142, 0.03) 100%);
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--white);
-            margin-bottom: 1.5rem;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid var(--soft-gray);
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: var(--accent-teal);
-        }
-
-        .faq-question {
-            font-size: 1.25rem;
-            font-weight: 700;
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            position: relative;
-            color: var(--primary-blue);
-        }
-
-        .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 2rem;
-            font-size: 2rem;
-            transition: transform 0.3s ease;
-            color: var(--accent-teal);
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 2rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            color: var(--text-medium);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 1rem 2rem 2rem;
-            max-height: 500px;
-        }
-
-        /* About Section */
-        .about-section {
-            background: var(--white);
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .about-image {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(43, 95, 127, 0.2);
-            border: 5px solid var(--white);
-        }
+        .pain-verdict.active { opacity: 1; animation: verdictGlow 1.5s ease-in-out infinite; }
+        @keyframes verdictGlow { 0%,100% { box-shadow: 0 0 12px rgba(232,93,4,0.25); } 50% { box-shadow: 0 0 28px rgba(232,93,4,0.5); } }
 
-        .about-content {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-medium);
-        }
-
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content strong {
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-
-        .about-signature {
-            margin-top: 2rem;
-            font-size: 1.4rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-            font-style: italic;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            text-align: center;
-            padding: 3rem 2rem;
-            color: var(--soft-gray);
-        }
-
-        /* Floating CTA */
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .floating-cta .cta-button {
-            box-shadow: 0 10px 40px rgba(82, 166, 117, 0.4);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .comparison-grid,
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .pain-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: 75vh;
-                padding: 2rem 1.5rem 1.5rem;
-            }
-
-            .cta-button {
-                padding: 1.1rem 2rem;
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 2.5rem 0;
-            }
-
-            .about-image {
-                max-width: 250px;
-                margin: 0 auto;
-            }
-
-            .proust-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .comparison-card.real::before {
-                font-size: 0.7rem;
-                padding: 0.4rem 1rem;
-            }
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Accessibility */
-        .cta-button:focus,
-        .faq-question:focus {
-            outline: 3px solid var(--accent-teal);
-            outline-offset: 3px;
-        }
-
-        /* Economy Badge */
-        .economy-badge {
-            background: linear-gradient(135deg, rgba(82, 166, 117, 0.1), rgba(75, 155, 142, 0.1));
-            border: 2px solid var(--success-green);
-            border-radius: 15px;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            max-width: 700px;
-            margin: 2rem auto;
-        }
-
-        .economy-badge-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .economy-badge-text {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            line-height: 1.5;
-        }
-
-        .economy-badge-text strong {
-            color: var(--success-green);
-            font-weight: 800;
-            font-size: 1.4rem;
-        }
-
-        /* Social Proof Badge */
-        .social-proof-badge {
-            background: linear-gradient(135deg, rgba(43, 95, 127, 0.08), rgba(75, 155, 142, 0.08));
-            border: 2px solid var(--primary-blue);
-            border-radius: 15px;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            max-width: 700px;
-            margin: 2rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .social-proof-icon {
-            font-size: 2.5rem;
-        }
-
-        .social-proof-content {
-            text-align: left;
-        }
-
-        .social-proof-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-            line-height: 1;
-            margin-bottom: 0.3rem;
-        }
-
-        .social-proof-text {
-            font-size: 1rem;
-            color: var(--text-medium);
-            line-height: 1.4;
-        }
-
-        @media (max-width: 768px) {
-            .social-proof-badge {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .social-proof-content {
-                text-align: center;
-            }
-        }
-
-        /* App Mockup Section */
-        .app-mockup-section {
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .app-mockup-image {
-            max-width: 900px;
-            width: 100%;
-            height: auto;
-            margin: 0 auto;
-            display: block;
-        }
-
-        /* Testimonials Section */
-        .testimonials-section {
-            background: linear-gradient(135deg, rgba(43, 95, 127, 0.03) 0%, rgba(75, 155, 142, 0.03) 100%);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid var(--soft-gray);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .testimonial-card:hover {
-            border-color: var(--accent-teal);
-            box-shadow: 0 10px 30px rgba(43, 95, 127, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .testimonial-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .testimonial-caption {
-            padding: 1rem 1.5rem;
-            background: var(--white);
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-medium);
-            font-weight: 600;
-        }
-
-        .testimonial-verified-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--success-green);
-        }
-
-        /* Trust Badges */
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 1.5rem;
-            background: var(--white);
-            border-radius: 10px;
-            border: 2px solid var(--soft-gray);
-        }
-
-        .trust-badge-icon {
-            width: 50px;
-            height: auto;
-        }
-
-        .trust-badge-text {
-            font-size: 0.9rem;
-            color: var(--text-medium);
-            line-height: 1.4;
-        }
+        /* BEFORE/AFTER */
+        .before-after { background: var(--off-white); }
 
-        .trust-badge-text strong {
-            display: block;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
+        .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 940px; margin: 3rem auto; }
 
-            .economy-badge {
-                padding: 1.2rem 1.5rem;
-            }
+        .ba-col { padding: 2rem; border-radius: 12px; }
+        .ba-col.before { background: #fff5f5; border: 2.5px solid var(--danger); }
+        .ba-col.after { background: #f0faf5; border: 2.5px solid var(--success); }
 
-            .economy-badge-text {
-                font-size: 1.1rem;
-            }
+        .ba-title { font-size: 1.2rem; font-family: 'DM Sans', sans-serif; font-weight: 800; text-align: center; margin-bottom: 1.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .ba-col.before .ba-title { color: var(--danger); }
+        .ba-col.after .ba-title { color: var(--success); }
 
-            .trust-badges {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
+        .ba-item { display: flex; align-items: flex-start; gap: 0.7rem; margin-bottom: 0.9rem; font-size: 0.98rem; line-height: 1.5; color: var(--charcoal); }
+        .ba-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .ba-icon.cross { color: var(--danger); }
+        .ba-icon.check { color: var(--success); }
 
-        /* Before/After Comparison Section */
-        .before-after-comparison {
-            background: var(--white);
-        }
+        /* SOLUTION */
+        .solution-section { background: var(--black); }
+        .solution-section .section-title { color: white; }
+        .solution-section .section-subtitle { color: rgba(255,255,255,0.58); }
 
-        .comparison-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 3rem auto;
-        }
+        .course-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); gap: 1.4rem; margin: 3rem 0; }
 
-        .comparison-column {
+        .feature-card {
+            background: var(--black-soft);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.07);
+            transition: all 0.3s;
+            position: relative; overflow: hidden;
         }
 
-        .comparison-column.before {
-            background: linear-gradient(135deg, rgba(224, 122, 95, 0.05), rgba(224, 122, 95, 0.02));
-            border: 3px solid var(--alert-coral);
-        }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--orange); }
+        .feature-card:hover { transform: translateY(-4px); border-color: rgba(232,93,4,0.35); box-shadow: 0 10px 30px rgba(232,93,4,0.15); }
 
-        .comparison-column.after {
-            background: linear-gradient(135deg, rgba(82, 166, 117, 0.05), rgba(82, 166, 117, 0.02));
-            border: 3px solid var(--success-green);
-        }
+        .feature-icon { font-size: 2.3rem; margin-bottom: 1rem; }
+        .feature-title { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; margin-bottom: 0.7rem; color: white; font-weight: 700; }
+        .feature-description { color: rgba(255,255,255,0.58); font-size: 0.95rem; line-height: 1.6; }
 
-        .comparison-column-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        /* MODULES */
+        .modules-section { background: var(--white); }
+        .modules-grid { display: grid; gap: 2rem; margin-top: 3rem; }
 
-        .comparison-column.before .comparison-column-title {
-            color: var(--alert-coral);
-        }
+        .module-card { background: var(--white); border: 2px solid var(--gray-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; }
+        .module-card:hover { border-color: var(--orange); box-shadow: 0 8px 28px rgba(232,93,4,0.1); }
 
-        .comparison-column.after .comparison-column-title {
-            color: var(--success-green);
-        }
+        .module-header { background: var(--black); padding: 1.4rem 2rem; display: flex; align-items: center; gap: 1.3rem; }
 
-        .comparison-list-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-            line-height: 1.5;
-        }
+        .module-num { background: var(--orange); color: white; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-        .comparison-list-icon {
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            margin-top: 0.1rem;
-        }
+        .module-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 0.25rem; }
+        .module-title { font-family: 'DM Sans', sans-serif; font-size: 1.25rem; font-weight: 800; color: white; }
 
-        .comparison-list-icon.cross {
-            color: var(--alert-coral);
-        }
+        .module-body { padding: 2rem; }
 
-        .comparison-list-icon.check {
-            color: var(--success-green);
-        }
+        .lesson-list { list-style: none; display: grid; gap: 1.1rem; }
 
-        /* Highlights Box */
-        .highlights-section {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(75, 155, 142, 0.08));
-            padding: 3rem 0;
-        }
+        .lesson-item { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 1rem; color: var(--charcoal); line-height: 1.5; }
+        .lesson-icon { color: var(--orange); font-size: 1rem; flex-shrink: 0; margin-top: 0.2rem; }
+
+        .lesson-subitems { list-style: none; padding-left: 1.8rem; margin-top: 0.4rem; display: grid; gap: 0.3rem; }
+        .lesson-subitem { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.92rem; color: var(--gray-mid); line-height: 1.4; }
+        .lesson-subitem::before { content: '·'; color: var(--orange); font-weight: 900; flex-shrink: 0; }
+
+        /* HIGHLIGHTS */
+        .highlights-section { background: var(--black); position: relative; overflow: hidden; }
+        .highlights-section::before { content: '◆'; position: absolute; font-size: 500px; color: rgba(232,93,4,0.025); top: 50%; left: 50%; transform: translate(-50%,-50%); line-height: 1; }
 
         .highlights-box {
-            background: var(--white);
-            border: 3px solid var(--primary-blue);
+            background: rgba(255,255,255,0.035);
+            border: 2px solid rgba(232,93,4,0.38);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 680px; margin: 0 auto;
+            position: relative; z-index: 2;
+        }
+
+        .highlights-title { font-family: 'DM Sans', sans-serif; font-size: 1.45rem; font-weight: 800; color: white; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.7rem; }
+
+        .highlights-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.3rem; font-size: 1.02rem; color: rgba(255,255,255,0.82); line-height: 1.6; }
+        .highlights-item-icon { color: var(--orange); font-size: 1.2rem; flex-shrink: 0; margin-top: 0.15rem; }
+        .highlights-item strong { color: white; }
+
+        .highlights-footer { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+        .highlights-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; font-weight: 600; color: var(--orange-light); }
+
+        /* WHY */
+        .why-section { background: var(--off-white); }
+        .why-grid { display: grid; gap: 2rem; max-width: 880px; margin: 3rem auto 0; }
+
+        .why-card { background: white; padding: 2.5rem; border-radius: 12px; border-left: 5px solid var(--orange); box-shadow: 0 4px 18px rgba(0,0,0,0.05); }
+        .why-card-title { display: flex; align-items: center; gap: 0.8rem; font-family: 'DM Sans', sans-serif; font-size: 1.35rem; font-weight: 800; margin-bottom: 1.1rem; color: var(--black); }
+        .why-card-icon { font-size: 1.7rem; }
+        .why-card-content { font-size: 1.03rem; line-height: 1.7; color: var(--gray-dark); }
+        .why-card-content strong { color: var(--black); }
+        .why-list { list-style: none; margin-top: 0.9rem; display: grid; gap: 0.7rem; }
+        .why-list-item { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.98rem; }
+        .why-list-icon { color: var(--orange); flex-shrink: 0; margin-top: 0.2rem; }
+
+        /* COMPARISON */
+        .comparison-section { background: white; }
+
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 1020px; margin: 3rem auto; }
+
+        .comparison-card { background: white; padding: 2.5rem; border-radius: 14px; border: 2.5px solid var(--gray-light); }
+        .comparison-card.real { border-color: var(--success); box-shadow: 0 10px 38px rgba(42,157,92,0.13); position: relative; }
+        .comparison-card.real::before { content: '⭐ RECOMENDADO'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--success); color: white; padding: 0.35rem 1.2rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; }
+        .comparison-card.fake { border-color: var(--danger); }
+
+        .comparison-title { font-family: 'DM Sans', sans-serif; font-size: 1.4rem; margin-bottom: 1.7rem; text-align: center; font-weight: 800; text-transform: uppercase; }
+        .comparison-title.fake { color: var(--danger); }
+        .comparison-title.real { color: var(--success); }
+
+        .comparison-item { display: flex; align-items: flex-start; margin-bottom: 1.1rem; font-size: 0.98rem; line-height: 1.5; color: var(--charcoal); }
+        .comparison-icon { margin-right: 0.9rem; font-size: 1.2rem; flex-shrink: 0; }
+        .comparison-icon.cross { color: var(--danger); }
+        .comparison-icon.check { color: var(--success); }
+
+        /* COUNTDOWN */
+        .countdown-container { background: linear-gradient(135deg,#c62828,#8b0000); padding: 1.4rem 2rem; border-radius: 12px; text-align: center; margin: 2rem auto; max-width: 560px; box-shadow: 0 8px 28px rgba(198,40,40,0.3); }
+        .countdown-title { color: white; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .countdown-timer { display: flex; justify-content: center; gap: 1rem; }
+        .countdown-item { background: rgba(255,255,255,0.15); padding: 0.85rem 1.3rem; border-radius: 8px; min-width: 72px; }
+        .countdown-number { font-size: 2.3rem; font-weight: 800; color: white; line-height: 1; font-family: 'Courier New', monospace; }
+        .countdown-label { font-size: 0.68rem; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-top: 0.25rem; font-weight: 600; }
+
+        /* PRICE */
+        .price-section { background: var(--off-white); text-align: center; }
+        .price-questions { max-width: 660px; margin: 0 auto 3rem; }
+        .price-question { font-size: 1.15rem; margin-bottom: 0.7rem; color: var(--gray-mid); font-style: italic; }
+        .price-reality { font-size: 1.2rem; margin: 2rem 0; color: var(--charcoal); line-height: 1.7; }
+        .price-reality strong { color: var(--black); }
+
+        .price-box { background: white; border: 3px solid var(--orange); border-radius: 20px; padding: 3rem; max-width: 560px; margin: 3rem auto; box-shadow: 0 18px 55px rgba(232,93,4,0.1); }
+
+        .price-fire { font-size: 2.3rem; margin-bottom: 0.7rem; }
+        .price-value { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--orange); font-weight: 900; margin-bottom: 0.4rem; line-height: 1; }
+        .price-period { font-size: 1.05rem; color: var(--gray-mid); margin-bottom: 1.4rem; }
+        .price-comparison { font-size: 1.02rem; color: var(--gray-dark); margin-bottom: 1.4rem; padding: 1.1rem; background: var(--off-white); border-radius: 10px; line-height: 1.7; }
+        .price-comparison strong { color: var(--black); }
+        .price-savings { font-size: 1.2rem; color: var(--success); font-weight: 700; margin-bottom: 1.4rem; }
+
+        .trust-badges { display: flex; justify-content: center; align-items: center; gap: 1.3rem; margin: 1.8rem 0; flex-wrap: wrap; }
+        .trust-badge { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.2rem; background: var(--off-white); border-radius: 8px; border: 1px solid var(--gray-light); }
+        .trust-badge-icon { font-size: 1.9rem; }
+        .trust-badge-text { font-size: 0.82rem; color: var(--gray-mid); line-height: 1.4; }
+        .trust-badge-text strong { display: block; color: var(--black); font-weight: 700; }
+
+        .guarantee { margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px solid var(--gray-light); }
+        .guarantee-badge { display: inline-block; background: var(--success); color: white; padding: 0.65rem 1.5rem; border-radius: 5px; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.7rem; }
+        .guarantee-text { color: var(--gray-mid); font-size: 0.92rem; }
+
+        /* TESTIMONIALS */
+        .testimonials-section { background: white; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(295px, 1fr)); gap: 1.4rem; margin-top: 3rem; }
+        .testimonial-card { border-radius: 12px; overflow: hidden; border: 2px solid var(--gray-light); transition: all 0.3s; }
+        .testimonial-card:hover { border-color: var(--orange); box-shadow: 0 7px 28px rgba(232,93,4,0.1); transform: translateY(-3px); }
+        .testimonial-image { width: 100%; height: auto; display: block; }
+        .testimonial-caption { padding: 0.85rem 1.2rem; background: white; text-align: center; font-size: 0.87rem; color: var(--gray-mid); font-weight: 600; }
+        .t-verified { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--success); }
+
+        /* FAQ */
+        .faq-section { background: var(--off-white); }
+        .faq-container { max-width: 840px; margin: 3rem auto 0; }
+        .faq-item { background: white; margin-bottom: 0.9rem; border-radius: 10px; overflow: hidden; border: 2px solid var(--gray-light); transition: all 0.3s; }
+        .faq-item:hover { border-color: var(--orange); }
+        .faq-question { font-size: 1.08rem; font-weight: 700; padding: 1.25rem 1.7rem; cursor: pointer; position: relative; color: var(--black); }
+        .faq-question::after { content: '+'; position: absolute; right: 1.7rem; font-size: 1.7rem; transition: transform 0.3s; color: var(--orange); }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { padding: 0 1.7rem; max-height: 0; overflow: hidden; transition: all 0.3s; color: var(--gray-dark); font-size: 0.98rem; line-height: 1.7; }
+        .faq-item.active .faq-answer { padding: 0.9rem 1.7rem 1.7rem; max-height: 500px; }
+
+        /* ABOUT */
+        .about-section { background: white; }
+        .about-container { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; max-width: 960px; margin: 3rem auto 0; }
+        .about-image { width: 100%; max-width: 330px; border-radius: 14px; box-shadow: 0 18px 55px rgba(0,0,0,0.1); }
+        .about-content { font-size: 1.08rem; line-height: 1.8; color: var(--gray-dark); }
+        .about-content p { margin-bottom: 1.2rem; }
+        .about-content strong { color: var(--black); font-weight: 700; }
+        .about-signature { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--orange); font-style: italic; margin-top: 1.3rem; }
+
+        /* FINAL CTA */
+        .final-cta { background: var(--black); text-align: center; padding: 5rem 2rem; }
+        .final-cta .section-title { color: white; margin-bottom: 1.4rem; }
+        .final-cta .section-subtitle { color: rgba(255,255,255,0.62); margin-bottom: 3rem; }
+
+        /* BADGES */
+        .social-proof-badge { background: var(--off-white); border: 2px solid var(--black); border-radius: 12px; padding: 1.2rem 2rem; max-width: 660px; margin: 2rem auto; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .social-proof-icon { font-size: 2rem; }
+        .social-proof-number { font-size: 1.75rem; font-weight: 800; color: var(--black); line-height: 1; margin-bottom: 0.2rem; }
+        .social-proof-text { font-size: 0.92rem; color: var(--gray-mid); }
+
+        .economy-badge { background: rgba(42,157,92,0.07); border: 2px solid var(--success); border-radius: 12px; padding: 1.2rem 2rem; text-align: center; max-width: 660px; margin: 1.3rem auto; }
+        .economy-badge-text { font-size: 1.15rem; color: var(--charcoal); font-weight: 600; }
+        .economy-badge-text strong { color: var(--success); font-weight: 800; font-size: 1.25rem; }
+
+        .economy-counter { background: rgba(42,157,92,0.07); border: 3px solid var(--success); border-radius: 14px; padding: 1.8rem; text-align: center; max-width: 560px; margin: 1.8rem auto; }
+        .economy-counter-title { font-size: 1.05rem; color: var(--gray-mid); margin-bottom: 0.7rem; font-weight: 600; }
+        .economy-counter-amount { font-size: 2.7rem; font-weight: 900; color: var(--success); line-height: 1; margin-bottom: 0.4rem; font-family: 'Courier New', monospace; }
+        .economy-counter-subtitle { font-size: 0.92rem; color: var(--charcoal); font-weight: 600; }
+
+        .urgency-badge { background: rgba(232,93,4,0.07); border: 2px solid var(--orange); border-radius: 12px; padding: 0.95rem 1.4rem; text-align: center; margin: 2rem auto; max-width: 460px; animation: urgencyGlow 2s infinite; }
+        @keyframes urgencyGlow { 0%,100% { box-shadow: 0 0 8px rgba(232,93,4,0.22); } 50% { box-shadow: 0 0 20px rgba(232,93,4,0.45); } }
+        .urgency-badge-text { font-size: 1.02rem; font-weight: 700; color: var(--orange); margin-bottom: 0.18rem; }
+        .urgency-badge-subtext { font-size: 0.87rem; color: var(--gray-mid); }
+
+        /* FOOTER */
+        footer { background: var(--black); text-align: center; padding: 2.3rem 2rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.05); }
+        footer p + p { margin-top: 0.7rem; font-size: 0.87rem; }
+
+        /* BONUS */
+        .bonus-section { background: var(--off-white); }
+
+        .bonus-box {
+            background: var(--black);
+            border: 2px solid var(--orange);
             border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 700px;
+            padding: 3rem;
+            max-width: 820px;
             margin: 0 auto;
-            box-shadow: 0 10px 40px rgba(43, 95, 127, 0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .highlights-title {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.8rem;
-            font-weight: 800;
+        .bonus-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(232,93,4,0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .bonus-tag {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.45rem 1.2rem;
+            border-radius: 50px;
+            margin-bottom: 1.4rem;
+        }
+
+        .bonus-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            color: white;
             margin-bottom: 2rem;
-            color: var(--text-dark);
         }
 
-        .highlights-title-icon {
-            font-size: 2rem;
-        }
+        .bonus-title em { font-style: normal; color: var(--orange); }
 
-        .highlights-list {
-            list-style: none;
-        }
-
-        .highlights-item {
+        .bonus-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(232,93,4,0.3);
+            border-radius: 14px;
+            padding: 2rem 2.5rem;
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            gap: 1.8rem;
+            text-align: left;
+            margin-bottom: 2rem;
         }
 
-        .highlights-item-icon {
-            color: var(--success-green);
-            font-size: 1.5rem;
+        .bonus-icon {
+            font-size: 3.5rem;
             flex-shrink: 0;
-            margin-top: 0.2rem;
+            line-height: 1;
         }
 
-        .highlights-item strong {
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .highlights-footer {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--soft-gray);
-            flex-wrap: wrap;
-        }
-
-        .highlights-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-
-        .highlights-badge-icon {
-            font-size: 1.3rem;
-        }
-
-        /* Why It Works Section */
-        .why-works-section {
-            background: linear-gradient(135deg, rgba(82, 166, 117, 0.05), rgba(75, 155, 142, 0.05));
-        }
-
-        .why-works-intro {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            margin-bottom: 3rem;
-            font-style: italic;
-        }
-
-        .why-works-intro strong {
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-
-        .why-works-grid {
-            display: grid;
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .why-works-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border-left: 5px solid var(--accent-teal);
-            box-shadow: 0 5px 20px rgba(43, 95, 127, 0.08);
-        }
-
-        .why-works-card-title {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.6rem;
+        .bonus-name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.35rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
+            color: white;
+            margin-bottom: 0.8rem;
         }
 
-        .why-works-card-icon {
-            font-size: 2rem;
-        }
-
-        .why-works-card-content {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-medium);
-        }
-
-        .why-works-card-content strong {
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .why-works-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .why-works-list-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
+        .bonus-description {
             font-size: 1.05rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 1.3rem;
         }
 
-        .why-works-list-icon {
-            color: var(--success-green);
-            flex-shrink: 0;
-            margin-top: 0.2rem;
+        .bonus-description strong { color: var(--orange-light); }
+
+        .bonus-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
         }
 
-        /* Responsive for new sections */
-        @media (max-width: 768px) {
-            .comparison-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .highlights-box {
-                padding: 2rem 1.5rem;
-            }
-
-            .highlights-footer {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .why-works-card {
-                padding: 2rem 1.5rem;
-            }
-        }
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 100px;
-            right: 25px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
-            z-index: 999;
+        .bonus-feature {
             display: flex;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: whatsappPulse 2s infinite;
+            gap: 0.7rem;
+            font-size: 0.97rem;
+            color: rgba(255,255,255,0.82);
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.6);
-        }
+        .bonus-feature span { color: var(--orange); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+        .bonus-feature strong { color: white; }
 
-        @keyframes whatsappPulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Urgency Badges */
-        .urgency-badge {
-            background: linear-gradient(135deg, rgba(224, 122, 95, 0.15), rgba(224, 122, 95, 0.1));
-            border: 2px solid var(--alert-coral);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            text-align: center;
-            margin: 2rem auto;
-            max-width: 500px;
-            animation: urgencyGlow 2s infinite;
-        }
-
-        @keyframes urgencyGlow {
-            0%, 100% {
-                border-color: var(--alert-coral);
-                box-shadow: 0 0 10px rgba(224, 122, 95, 0.3);
-            }
-            50% {
-                border-color: #e07a5f;
-                box-shadow: 0 0 20px rgba(224, 122, 95, 0.5);
-            }
-        }
-
-        .urgency-badge-icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .urgency-badge-text {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--alert-coral);
-            margin-bottom: 0.3rem;
-        }
-
-        .urgency-badge-subtext {
-            font-size: 0.9rem;
-            color: var(--text-medium);
-        }
-
-        /* Live Viewers Badge */
-        .live-viewers {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: white;
-            border: 2px solid var(--alert-coral);
-            border-radius: 50px;
-            padding: 0.6rem 1.2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            z-index: 998;
-            display: flex;
+        .bonus-urgency {
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            animation: slideInRight 0.5s ease;
+            gap: 0.7rem;
+            background: rgba(232,93,4,0.12);
+            border: 1px solid rgba(232,93,4,0.4);
+            border-radius: 50px;
+            padding: 0.65rem 1.4rem;
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.8);
         }
 
-        @keyframes slideInRight {
-            from {
-                transform: translateX(150px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
+        .bonus-urgency strong { color: var(--orange-light); }
 
-        .live-dot {
-            width: 10px;
-            height: 10px;
-            background: #ff4444;
+        .bonus-urgency-dot {
+            width: 8px; height: 8px;
+            background: var(--orange);
             border-radius: 50%;
+            flex-shrink: 0;
             animation: blink 1.5s infinite;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .live-viewers-text {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .live-viewers-number {
-            color: var(--alert-coral);
-            font-weight: 800;
-        }
-
-        /* Countdown Timer */
-        .countdown-container {
-            background: linear-gradient(135deg, #ff4444, #cc0000);
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin: 2rem auto;
-            max-width: 600px;
-            box-shadow: 0 8px 30px rgba(255, 68, 68, 0.3);
-        }
-
-        .countdown-title {
-            color: white;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            min-width: 80px;
-        }
-
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: white;
-            line-height: 1;
-            font-family: 'Courier New', monospace;
-        }
-
-        .countdown-label {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-transform: uppercase;
-            margin-top: 0.3rem;
-            font-weight: 600;
-        }
-
-        /* Economy Counter Badge */
-        .economy-counter {
-            background: linear-gradient(135deg, rgba(82, 166, 117, 0.15), rgba(75, 155, 142, 0.15));
-            border: 3px solid var(--success-green);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            max-width: 600px;
-            margin: 3rem auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .economy-counter::before {
-            content: '💰';
-            position: absolute;
-            font-size: 120px;
-            opacity: 0.05;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .economy-counter-title {
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .economy-counter-amount {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--success-green);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            font-family: 'Courier New', monospace;
-        }
-
-        .economy-counter-subtitle {
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-
         @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 80px;
-                right: 15px;
-                font-size: 25px;
-            }
+            .bonus-card { flex-direction: column; gap: 1.2rem; }
+            .bonus-box { padding: 2rem 1.5rem; }
+        }
 
-            .live-viewers {
-                top: 70px;
-                right: 10px;
-                padding: 0.5rem 1rem;
-            }
-
-            .countdown-number {
-                font-size: 2rem;
-            }
-
-            .countdown-item {
-                padding: 0.8rem 1rem;
-                min-width: 60px;
-            }
-
-            .economy-counter-amount {
-                font-size: 2.2rem;
-            }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .pain-grid, .ba-grid, .comparison-grid, .about-container { grid-template-columns: 1fr; }
+            section { padding: 2.5rem 0; }
+            .hero { min-height: 80vh; padding: 2rem 1.5rem; }
+            .about-image { max-width: 230px; margin: 0 auto; }
+            .intro-box { padding: 2rem 1.5rem; }
+            .trust-badges, .highlights-footer { flex-direction: column; gap: 1rem; }
+            .social-proof-badge { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5521976462812?text=Olá!%20Vim%20do%20site%20do%20Mapa%20da%20Coleção%20Perfeita" target="_blank" class="whatsapp-float" title="Fale comigo no WhatsApp">
-        <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+
+    <a href="https://wa.me/5521976462812?text=Olá!%20Vim%20do%20site%20do%20Curso%20Prático%20da%20Perfumaria" target="_blank" class="whatsapp-float" title="Fale comigo no WhatsApp">
+        <svg width="27" height="27" fill="currentColor" viewBox="0 0 16 16">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
         </svg>
     </a>
 
-    <!-- Live Viewers Badge -->
     <div class="live-viewers">
         <div class="live-dot"></div>
-        <span class="live-viewers-text">
-            <span class="live-viewers-number" id="live-viewers-count">27</span> pessoas vendo agora
-        </span>
+        <span class="live-viewers-text"><span class="live-viewers-number" id="live-viewers-count">31</span> pessoas vendo agora</span>
     </div>
 
-
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-question-box">
-                    <div class="hero-question-icon">❓</div>
-                    <div class="hero-question-text">
-                        Por que parece que você sempre passa imperceptível pelos lugares e alguns caras chamam toda atenção?
-                    </div>
+            <div class="hero-badge">🎓 Curso em Vídeo &nbsp;·&nbsp; 3 Módulos &nbsp;·&nbsp; 10 Aulas</div>
+
+            <div class="hero-question-box">
+                <div class="hero-question-icon">❓</div>
+                <div class="hero-question-text">
+                    Você já gastou dinheiro em perfume que nunca usa — ou entrou em loja e saiu sem saber o que escolher?
                 </div>
-                
-                <h1 class="hero-headline">
-                    Comprar um perfume não é questão de pegar <span class="highlight">o mais caro ou o da moda</span>, mas de entender o que você gosta para escolher <span class="highlight">o perfume certo.</span>
-                </h1>
-                
-                <p class="hero-subheadline">
-                    Agora você tem um <strong>Mapa para acertar sempre.</strong>
-                </p>
-                
-                <ul class="hero-checklist">
-                    <li class="hero-checklist-item">
-                        <span class="hero-checklist-icon">✓</span>
-                        <span>um app que analisa e te da sugestões personalizadas com i.a.</span>
-                    </li>
-                    <li class="hero-checklist-item">
-                        <span class="hero-checklist-icon">✓</span>
-                        <span>nomes, preços, categorias e diagnóstico da sua coleção em tempo real</span>
-                    </li>
-                    <li class="hero-checklist-item">
-                        <span class="hero-checklist-icon">✓</span>
-                        <span>aulas práticas e objetivas que vão ensinar tudo que precisa saber, sem enrolação.</span>
-                    </li>
-                </ul>
-                
-                <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero ter meu Mapa!</a>
             </div>
+
+            <h1 class="hero-headline">
+                O curso completo de perfumaria masculina que te ensina a <span class="highlight">escolher, usar e colecionar</span> com inteligência — do zero ao expert.
+            </h1>
+
+            <p class="hero-subheadline">
+                Aulas curtas, diretas e práticas.<br>
+                <strong>Sem enrolação. Sem desperdício. Com resultado real.</strong>
+            </p>
+
+            <ul class="hero-checklist">
+                <li class="hero-checklist-item">
+                    <span class="hci">◆</span>
+                    <span>Fundamentos completos: concentrações, pirâmide olfativa, famílias e muito mais</span>
+                </li>
+                <li class="hero-checklist-item">
+                    <span class="hci">◆</span>
+                    <span>Como descobrir seu perfil olfativo e montar seus primeiros 3 perfumes perfeitos</span>
+                </li>
+                <li class="hero-checklist-item">
+                    <span class="hci">◆</span>
+                    <span>Técnicas avançadas: layering, coleção equilibrada e respiro olfativo</span>
+                </li>
+            </ul>
+
+            <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero o Curso Agora</a>
+
+            <p style="margin-top: 1.4rem; color: rgba(255,255,255,0.45); font-size: 0.87rem;">
+                ✓ Acesso imediato &nbsp;·&nbsp; ✓ Garantia de 7 dias &nbsp;·&nbsp; ✓ Aulas em vídeo HD
+            </p>
         </div>
     </section>
 
-    <!-- Social Proof Badge -->
+    <div class="divider"></div>
+
+    <!-- SOCIAL PROOF -->
     <div class="container">
         <div class="social-proof-badge">
             <div class="social-proof-icon">👥</div>
-            <div class="social-proof-content">
-                <div class="social-proof-number">Mais de 150 alunos</div>
-                <div class="social-proof-text">com suas coleções mapeadas e com sugestões personalizadas para cada um!</div>
+            <div>
+                <div class="social-proof-number">+150 alunos</div>
+                <div class="social-proof-text">já transformaram sua relação com a perfumaria</div>
             </div>
         </div>
-    </div>
-
-    <!-- Economy Badge -->
-    <div class="container">
         <div class="economy-badge">
-            <div class="economy-badge-icon">💰</div>
-            <p class="economy-badge-text">
-                Economia média de <strong>R$ 500+</strong> evitando comprar o perfume que não combina com você!
-            </p>
+            <p class="economy-badge-text">Economia média de <strong>R$ 500+</strong> por ano — evitando comprar o perfume errado!</p>
         </div>
-    </div>
-
-    <!-- Total Economy Counter -->
-    <div class="container">
         <div class="economy-counter" id="economy-counter">
-            <div class="economy-counter-title">
-                Impacto Total do Mapa da Coleção Perfeita
-            </div>
-            <div class="economy-counter-amount" id="economy-amount">
-                R$ 0
-            </div>
-            <div class="economy-counter-subtitle">
-                economizados por todos os meus alunos
-            </div>
+            <div class="economy-counter-title">Impacto total do curso nos nossos alunos</div>
+            <div class="economy-counter-amount" id="economy-amount">R$ 0</div>
+            <div class="economy-counter-subtitle">economizados em compras desnecessárias</div>
         </div>
     </div>
 
-    <!-- Problem Section -->
-    <section class="proust-section">
+    <!-- INTRO / PROBLEM -->
+    <section class="intro-section">
         <div class="container">
-            <div class="proust-container">
-                <div class="proust-content">
-                    <p class="problem-hook" style="text-align: center; margin-bottom: 2rem;">
-                        Sabe aquele momento em que você olha seus perfumes<br>
-                        <strong>e não tem ideia de qual comprar?</strong>
-                    </p>
-                    <p class="proust-text">
-                        A real é que a maioria dos homens não sabe qual perfume escolher porque <strong>nunca tiveram um guia, uma explicação.</strong>
-                    </p>
-                    <p class="proust-text">
-                        Você ouve que algum perfume é bom e compra.<br>
-                        Ou pior: <strong>usa o mesmo há anos.</strong>
-                    </p>
-                    <p class="imagine-text" style="text-align: center; margin-top: 2rem;">
-                        Mas nós vamos mudar isso.
-                    </p>
+            <div class="intro-box">
+                <p class="intro-hook">Sabe aquele momento que você olha seus perfumes e <strong>não tem ideia de qual comprar</strong>?</p>
+                <p class="intro-text">A real é que a maioria dos homens não sabe escolher perfume porque <strong>nunca tiveram um guia de verdade.</strong> Você ouve que algum é bom e compra. Ou pior: <strong>usa o mesmo há anos.</strong></p>
+                <p class="intro-text">O resultado? Coleção redundante, dinheiro jogado fora, e a sensação de que você nunca acerta. Não é culpa sua — é falta de informação estruturada.</p>
+                <p class="intro-cta-line">Mas isso vai mudar agora.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Como Eu Passei de <em>Invisível</em> a Imponente</h2>
+
+            <div class="about-container">
+                <div>
+                    <img src="images/victor-guerise.jpg" alt="Victor Guerise" class="about-image">
+                </div>
+                <div class="about-content">
+                    <p>Vou ser direto com você: <strong>eu era invisível.</strong></p>
+                    <p>Entrava em uma sala e ninguém notava. Usava perfume? Sim. Mas era qualquer um — o que estava em promoção, o que me davam, o mesmo há anos.</p>
+                    <p>Até que levei um <strong>pé na bunda</strong> que me acordou. Mudei o estilo, comecei a me cuidar de verdade. E foi aí que descobri o poder real da perfumaria. Não de cheirar bem — mas de ter <strong>PRESENÇA. IMPONÊNCIA. IMPACTO.</strong></p>
+                    <p>A primeira vez que entrei numa sala usando o perfume certo, as pessoas <strong>viraram a cabeça.</strong> Com respeito. Com curiosidade.</p>
+                    <p>Hoje tenho mais de <strong>100 perfumes</strong> na coleção. Mas já errei muito: já caí em conto de vendedor, gastei R$ 800 em perfume encostado, comprei clones ruins.</p>
+                    <p>Foi por isso que criei o <strong>Curso Prático da Perfumaria</strong> — para que você não precise errar como eu errei.</p>
+                    <p class="about-signature">"O cara que usa o perfume certo não precisa gritar. Ele entra na sala e todo mundo sabe."</p>
+                    <p style="margin-top:1.3rem; font-weight:700; color:var(--black);">— Victor Guerise</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pain Points Section -->
+    <!-- PAIN POINTS -->
     <section class="pain-section">
         <div class="container">
-            <h2 class="section-title">
-                <span>Teste Prático:</span> Você Precisa Deste Curso?
-            </h2>
-            <p class="pain-intro">
-                Marque quantas dessas situações você já passou:
-            </p>
-            
+            <span class="section-label">Teste rápido</span>
+            <h2 class="section-title">Você Precisa deste Curso?</h2>
+            <p class="section-subtitle">Marque as situações que você já viveu:</p>
+
             <div class="pain-grid">
                 <div class="pain-card">
                     <div class="pain-checkbox"></div>
-                    <p class="pain-text">
-                        Você compra sempre o mesmo perfume porque tem medo de errar
-                    </p>
+                    <p class="pain-text">Você compra sempre o mesmo perfume porque tem medo de errar</p>
                 </div>
-                
                 <div class="pain-card">
                     <div class="pain-checkbox"></div>
-                    <p class="pain-text">
-                        Você usa qualquer perfume que te deem, mesmo não gostando
-                    </p>
+                    <p class="pain-text">Você não sabe o que procurar quando entra numa loja de perfumes</p>
                 </div>
-                
                 <div class="pain-card">
                     <div class="pain-checkbox"></div>
-                    <p class="pain-text">
-                        Você já caiu em venda de influenciador ou vendedor de loja
-                    </p>
+                    <p class="pain-text">Você já comprou por hype de influenciador e se arrependeu</p>
                 </div>
-                
                 <div class="pain-card">
                     <div class="pain-checkbox"></div>
-                    <p class="pain-text">
-                        Você não sabe o que procurar quando entra numa loja de perfumes
-                    </p>
+                    <p class="pain-text">Você tem perfumes em casa que quase nunca usa</p>
                 </div>
             </div>
-            
-            <p class="pain-verdict">
-                Se você marcou pelo menos 2, você PRECISA do Mapa da Coleção Perfeita.
-            </p>
-            
-            <div style="text-align: center; margin-top: 2.5rem;">
-                <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Quero o Mapa Agora</a>
+
+            <p class="pain-verdict">Se você marcou 2 ou mais — o Curso Prático da Perfumaria é exatamente pra você.</p>
+
+            <div style="text-align:center; margin-top:2.5rem;">
+                <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Resolver Isso Agora</a>
             </div>
         </div>
     </section>
 
-    <!-- Highlights Section -->
-    <section class="highlights-section">
+    <!-- BEFORE/AFTER -->
+    <section class="before-after">
         <div class="container">
-            <div class="highlights-box">
-                <h3 class="highlights-title">
-                    <span class="highlights-title-icon">⚠️</span>
-                    Destaques do curso:
-                </h3>
-                
-                <ul class="highlights-list">
-                    <li class="highlights-item">
-                        <span class="highlights-item-icon">✓</span>
-                        <span>Com ele, você não cai em venda de influenciador que <strong>não te acrescenta em nada!</strong></span>
-                    </li>
-                    
-                    <li class="highlights-item">
-                        <span class="highlights-item-icon">✓</span>
-                        <span>Economiza <strong>tempo e dinheiro</strong></span>
-                    </li>
-                    
-                    <li class="highlights-item">
-                        <span class="highlights-item-icon">✓</span>
-                        <span>Compra <strong>o certo de primeira</strong></span>
-                    </li>
-                    
-                    <li class="highlights-item">
-                        <span class="highlights-item-icon">✓</span>
-                        <span>I.A. 24h ao seu lado para <strong>não deixar você errar e te ajuda em todas as escolhas!</strong></span>
-                    </li>
-                    
-                    <li class="highlights-item">
-                        <span class="highlights-item-icon">✓</span>
-                        <span>Chama atenção em <strong>QUALQUER</strong> lugar</span>
-                    </li>
-                </ul>
-                
-                <div class="highlights-footer">
-                    <div class="highlights-badge">
-                        <span class="highlights-badge-icon">⚡</span>
-                        <span>Acesso imediato</span>
-                    </div>
-                    <div class="highlights-badge">
-                        <span class="highlights-badge-icon">📱</span>
-                        <span>Funciona no celular</span>
-                    </div>
+            <span class="section-label">A transformação</span>
+            <h2 class="section-title">Antes e Depois do <em>Curso</em></h2>
+
+            <div class="ba-grid">
+                <div class="ba-col before">
+                    <h3 class="ba-title">❌ Sem o Curso</h3>
+                    <div class="ba-item"><span class="ba-icon cross">✕</span><span>Compras por impulso — e arrependimento depois</span></div>
+                    <div class="ba-item"><span class="ba-icon cross">✕</span><span>Não sabe a diferença entre EDT, EDP, Parfum</span></div>
+                    <div class="ba-item"><span class="ba-icon cross">✕</span><span>Usa o mesmo perfume em todas as ocasiões</span></div>
+                    <div class="ba-item"><span class="ba-icon cross">✕</span><span>Coleção cheia de repetições e lacunas</span></div>
+                    <div class="ba-item"><span class="ba-icon cross">✕</span><span>Depende de vendedor ou influenciador para decidir</span></div>
+                </div>
+                <div class="ba-col after">
+                    <h3 class="ba-title">✓ Com o Curso</h3>
+                    <div class="ba-item"><span class="ba-icon check">✓</span><span>Sabe o que comprar antes mesmo de entrar na loja</span></div>
+                    <div class="ba-item"><span class="ba-icon check">✓</span><span>Entende concentrações, famílias e pirâmide olfativa</span></div>
+                    <div class="ba-item"><span class="ba-icon check">✓</span><span>Tem um perfume certo para cada situação e clima</span></div>
+                    <div class="ba-item"><span class="ba-icon check">✓</span><span>Coleção equilibrada, estratégica e sem redundância</span></div>
+                    <div class="ba-item"><span class="ba-icon check">✓</span><span>Autonomia total para decidir sozinho com confiança</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Before/After Comparison -->
-    <section class="before-after-comparison">
-        <div class="container">
-            <h2 class="section-title">
-                A <span>Transformação</span> que o Mapa Oferece
-            </h2>
-            
-            <div class="comparison-container">
-                <div class="comparison-column before">
-                    <h3 class="comparison-column-title">Antes do Mapa da Coleção Perfeita</h3>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon cross">✕</span>
-                        <span>Perde dinheiro em perfumes que não usa</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon cross">✕</span>
-                        <span>Compra perfumes parecidos sem perceber</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon cross">✕</span>
-                        <span>Não sabe o que realmente está faltando</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon cross">✕</span>
-                        <span>Depende de vendedores que empurram estoque</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon cross">✕</span>
-                        <span>Seus perfumes não atendem suas necessidades!</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-column after">
-                    <h3 class="comparison-column-title">Depois do Mapa da Coleção Perfeita</h3>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon check">✓</span>
-                        <span>Sabe exatamente qual perfume comprar</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon check">✓</span>
-                        <span>Coleção completa e equilibrada</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon check">✓</span>
-                        <span>Nunca mais erra na escolha</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon check">✓</span>
-                        <span>Liberdade para decidir sozinho</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon check">✓</span>
-                        <span>Economiza em cada compra</span>
-                    </div>
-                    
-                    <div class="comparison-list-item">
-                        <span class="comparison-list-icon check">✓</span>
-                        <span>Tem um perfume para qualquer ocasião!</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section -->
+    <!-- SOLUTION -->
     <section class="solution-section" id="curso">
         <div class="container">
-            <p class="solution-intro">
-                Apresento:
-            </p>
-            <h2 class="section-title">
-                <span>MAPA DA COLEÇÃO PERFEITA</span>
-            </h2>
-            <p class="section-subtitle">
-                O único curso de perfumaria masculina com App + IA integrado
-            </p>
-            
-            <!-- App Mockup -->
-            <div class="app-mockup-section">
-                <img src="images/app-mockup.png" alt="Mapa da Coleção Perfeita - App em Múltiplos Dispositivos" class="app-mockup-image">
-            </div>
-            
+            <span class="section-label" style="color:var(--orange);">Apresentando</span>
+            <h2 class="section-title" style="color:white;">Curso Prático da Perfumaria</h2>
+            <p class="section-subtitle">O método completo para o homem que quer dominar a perfumaria — do zero ao colecionador consciente.</p>
+
             <div class="course-features">
                 <div class="feature-card">
                     <div class="feature-icon">🎓</div>
-                    <h3 class="feature-title">4 Aulas Estratégicas</h3>
-                    <p class="feature-description">
-                        Aprenda do zero ao avançado: famílias olfativas, princípios de coleção, respiro olfativo e como usar o app.
-                    </p>
+                    <h3 class="feature-title">3 Módulos Completos</h3>
+                    <p class="feature-description">Do fundamentos à coleção avançada. Progressão lógica e didática, sem pular etapas.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3 class="feature-title">IA que Analisa SUA Coleção</h3>
-                    <p class="feature-description">
-                        Conexão direta com inteligência artificial que diagnostica lacunas e sugere próximas compras personalizadas.
-                    </p>
+                    <div class="feature-icon">🎬</div>
+                    <h3 class="feature-title">10 Aulas em Vídeo</h3>
+                    <p class="feature-description">Aulas curtas de 5 a 10 minutos. Você aprende no seu ritmo, sem enrolação.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">App Premium</h3>
-                    <p class="feature-description">
-                        Controle total da sua coleção no celular. Sincronização em nuvem e acesso de qualquer lugar.
-                    </p>
+                    <div class="feature-icon">👃</div>
+                    <h3 class="feature-title">Treinamento do Nariz</h3>
+                    <p class="feature-description">Aprenda a identificar, comparar e analisar fragrâncias com precisão crescente.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3 class="feature-title">Sistema Gamificado</h3>
-                    <p class="feature-description">
-                        Conquiste badges, complete missões e evolua sua coleção de forma estratégica e divertida.
-                    </p>
+                    <div class="feature-icon">🧩</div>
+                    <h3 class="feature-title">Perfil Olfativo Próprio</h3>
+                    <p class="feature-description">Descubra seu tipo (Fresco, Elegante, Intenso ou Criativo) e monte a coleção ideal.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Planejamento Estratégico</h3>
-                    <p class="feature-description">
-                        Monte sua coleção com base em dados, não em achismos. Economia garantida em cada compra.
-                    </p>
+                    <div class="feature-icon">🛒</div>
+                    <h3 class="feature-title">Estratégia de Compra</h3>
+                    <p class="feature-description">Onde comprar, quando comprar, como identificar falsificações e usar decants.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
-                    <h3 class="feature-title">Atualizações Contínuas</h3>
-                    <p class="feature-description">
-                        Banco de dados sempre atualizado com novos lançamentos e tendências do mercado.
-                    </p>
+                    <h3 class="feature-title">Layering e Rotação</h3>
+                    <p class="feature-description">Técnicas avançadas de combinação e sistema de rotação para maximizar sua coleção.</p>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem;">
+            <div style="text-align:center; margin-top:2rem;">
                 <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Quero Começar Agora</a>
             </div>
         </div>
     </section>
 
-      <!-- Why It Works Section -->
-    <section class="why-works-section">
+    <!-- MODULES -->
+    <section class="modules-section">
         <div class="container">
-            <h2 class="section-title">
-                <span>⚡ Por Que o Mapa Funciona?</span>
-            </h2>
-            <p class="why-works-intro">
-                <strong>4 aulas exclusivas</strong> para entender <strong>como montar e equilibrar sua coleção do zero!</strong>
-            </p>
-            
-            <div class="why-works-grid">
-                <div class="why-works-card">
-                    <h3 class="why-works-card-title">
-                        <span class="why-works-card-icon">🗺️</span>
-                        Aulas Explicando Como Fazer a Coleção Perfeita
-                    </h3>
-                    <div class="why-works-card-content">
-                        <ul class="why-works-list">
-                            <li class="why-works-list-item">
-                                <span class="why-works-list-icon">✓</span>
-                                <span><strong>Não é um PDF.</strong> É um curso com um aplicativo que sugere <strong>as melhores opções para você!</strong></span>
-                            </li>
-                            <li class="why-works-list-item">
-                                <span class="why-works-list-icon">✓</span>
-                                <span>Acessa sua coleção de <strong>qualquer lugar, a qualquer hora!</strong></span>
-                            </li>
+            <span class="section-label">Conteúdo completo</span>
+            <h2 class="section-title">O Que Você Vai <em>Aprender</em></h2>
+            <p class="section-subtitle">10 aulas organizadas em 3 módulos progressivos. Do absoluto zero à coleção avançada.</p>
+
+            <div class="modules-grid">
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-num">1</div>
+                        <div>
+                            <div class="module-tag">Módulo 1</div>
+                            <div class="module-title">Fundamentos da Perfumaria</div>
+                        </div>
+                    </div>
+                    <div class="module-body">
+                        <ul class="lesson-list">
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Como é feito o perfume e as concentrações</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Diferença entre acordes, notas e famílias</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Pirâmide olfativa</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Aplicação correta e conservação</span></li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="why-works-card">
-                    <h3 class="why-works-card-title">
-                        <span class="why-works-card-icon">🤖</span>
-                        O Perfumista - I.A. Integrada
-                    </h3>
-                    <div class="why-works-card-content">
-                        <p><strong>O Perfumista</strong>, nossa I.A. integrada, vai analisar sua coleção e dizer se o perfume que você quer <strong>combina ou não com a sua coleção!</strong></p>
-                        <ul class="why-works-list" style="margin-top: 1rem;">
-                            <li class="why-works-list-item">
-                                <span class="why-works-list-icon">✓</span>
-                                <span>Não sabe nada de perfumes? Sem problemas! <strong>Ele te sugere o básico, baseado no seu orçamento, clima e idade!</strong></span>
-                            </li>
-                            <li class="why-works-list-item">
-                                <span class="why-works-list-icon">✓</span>
-                                <span><strong>Ele analisa e aponta os pontos fracos e fortes da sua coleção</strong> conforme você adiciona ou tira perfumes!</span>
-                            </li>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-num">2</div>
+                        <div>
+                            <div class="module-tag">Módulo 2</div>
+                            <div class="module-title">Construindo Seu Perfil Olfativo</div>
+                        </div>
+                    </div>
+                    <div class="module-body">
+                        <ul class="lesson-list">
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Descobrindo preferências, erros de iniciante e vocabulário</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Perfumes para cada ocasião</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Seus primeiros 3 perfumes</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Designer, Nicho, Contratipos, Dupes e Árabes</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Estratégia de compra</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-num">3</div>
+                        <div>
+                            <div class="module-tag">Módulo 3</div>
+                            <div class="module-title">Colecionador Consciente</div>
+                        </div>
+                    </div>
+                    <div class="module-body">
+                        <ul class="lesson-list">
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Desenvolvendo seu nariz e análise comparativa</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Combinações olfativas — Layering</span></li>
+                            <li class="lesson-item"><span class="lesson-icon">▸</span><span>Anatomia de uma coleção equilibrada</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUS -->
+    <section class="bonus-section">
+        <div class="container">
+            <div class="bonus-box">
+                <div class="bonus-tag">🎁 BÔNUS EXCLUSIVO</div>
+                <h2 class="bonus-title">Para os Primeiros <em>100 Alunos</em></h2>
+                <div class="bonus-card">
+                    <div class="bonus-icon">📱</div>
+                    <div class="bonus-content">
+                        <h3 class="bonus-name">Acesso Vitalício ao Mapa da Coleção Perfeita</h3>
+                        <p class="bonus-description">
+                            Aplicativo com <strong>I.A. integrada</strong> que analisa, sugere e classifica sua coleção baseado nos seus gostos — para você nunca mais errar na próxima compra.
+                        </p>
+                        <div class="bonus-features">
+                            <span class="bonus-feature"><span>✓</span> Diagnóstico personalizado da sua coleção</span>
+                            <span class="bonus-feature"><span>✓</span> Sugestões de compra baseadas no seu perfil</span>
+                            <span class="bonus-feature"><span>✓</span> Acesso <strong>vitalício</strong> — paga uma vez, usa para sempre</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bonus-urgency">
+                    <div class="bonus-urgency-dot"></div>
+                    <span>Vagas limitadas — <strong>apenas 100 alunos</strong> terão acesso a este bônus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="highlights-box">
+                <h3 class="highlights-title"><span>⚠️</span> Destaques do Curso:</h3>
+                <ul style="list-style:none;">
+                    <li class="highlights-item"><span class="highlights-item-icon">◆</span><span>Você <strong>não cai mais em venda de influenciador</strong> que não te acrescenta nada</span></li>
+                    <li class="highlights-item"><span class="highlights-item-icon">◆</span><span><strong>Economiza tempo e dinheiro</strong> — compra certo de primeira</span></li>
+                    <li class="highlights-item"><span class="highlights-item-icon">◆</span><span>Aprende o conceito exclusivo de <strong>respiro olfativo</strong> para usar cada perfume no momento certo</span></li>
+                    <li class="highlights-item"><span class="highlights-item-icon">◆</span><span>Chama atenção em <strong>qualquer</strong> ambiente — trabalho, balada, encontro, reunião</span></li>
+                    <li class="highlights-item"><span class="highlights-item-icon">◆</span><span>Aulas práticas que você <strong>assiste no celular a qualquer hora</strong></span></li>
+                </ul>
+                <div class="highlights-footer">
+                    <div class="highlights-badge"><span>⚡</span> Acesso imediato</div>
+                    <div class="highlights-badge"><span>📱</span> Funciona no celular</div>
+                    <div class="highlights-badge"><span>🔒</span> Garantia de 7 dias</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY IT WORKS -->
+    <section class="why-section">
+        <div class="container">
+            <span class="section-label">Por que funciona</span>
+            <h2 class="section-title">O Método que <em>Ninguém Ensinou</em></h2>
+            <p class="section-subtitle">Não é conteúdo genérico de YouTube. É um sistema estruturado para quem quer resultado real.</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3 class="why-card-title"><span class="why-card-icon">🧪</span> Aprenda Fazendo — Aulas com Exercícios Práticos</h3>
+                    <div class="why-card-content">
+                        <p>Cada aula foi pensada para que você <strong>aplique imediatamente</strong> o que aprendeu. O teste dos 3 momentos, a análise comparativa, a montagem do trio inicial — tudo prático.</p>
+                        <ul class="why-list">
+                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Progressão lógica do simples ao avançado</span></li>
+                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Aulas curtas para assistir no intervalo ou no ônibus</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <h3 class="why-card-title"><span class="why-card-icon">🧠</span> Conceito Exclusivo — Respiro Olfativo</h3>
+                    <div class="why-card-content">
+                        <p>Você vai aprender sobre <strong>fadiga olfativa</strong> e o conceito único de <strong>respiro olfativo</strong> — como estruturar sua coleção para que cada uso seja especial e seu nariz nunca se acostume.</p>
+                        <ul class="why-list">
+                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Sistema de rotação semanal estruturado</span></li>
+                            <li class="why-list-item"><span class="why-list-icon">◆</span><span>Arquitetura de coleção por tamanho e objetivo</span></li>
                         </ul>
                     </div>
                 </div>
@@ -2126,90 +1031,41 @@
         </div>
     </section>
 
-
-    <!-- Comparison Section -->
+    <!-- COMPARISON -->
     <section class="comparison-section">
         <div class="container">
-            <h2 class="section-title">
-                Você Prefere a <span>Cópia</span> ou o <span style="background: linear-gradient(135deg, var(--success-green), var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Original</span>?
-            </h2>
-            
+            <span class="section-label">A escolha é sua</span>
+            <h2 class="section-title">Cópia ou <em>Original</em>?</h2>
+
             <div class="comparison-grid">
                 <div class="comparison-card real">
-                    <h3 class="comparison-title real">✓ Jeito Certo</h3>
-                    <p style="text-align: center; margin-bottom: 2rem; color: var(--text-medium);">
-                        (Mapa da Coleção Perfeita)
-                    </p>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon check">✓</span>
-                        <span>Sistema estruturado em 4 aulas que te leva do zero ao expert</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon check">✓</span>
-                        <span>IA analisa SUA coleção especificamente e te dá diagnóstico real</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon check">✓</span>
-                        <span>App atualizado constantemente com novos lançamentos</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon check">✓</span>
-                        <span>Planejamento estratégico automatizado - você sabe exatamente o que comprar</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon check">✓</span>
-                        <span>Gamificação que torna o processo divertido e engajante</span>
-                    </div>
+                    <h3 class="comparison-title real">✓ Curso Prático da Perfumaria</h3>
+                    <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Sistema estruturado em 3 módulos e 12 aulas — do zero ao avançado</span></div>
+                    <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Aprende a identificar seu perfil olfativo e escolher com autonomia</span></div>
+                    <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Técnicas de layering e respiro olfativo que ninguém ensina</span></div>
+                    <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Sabe exatamente o que comprar antes de entrar na loja</span></div>
+                    <div class="comparison-item"><span class="comparison-icon check">✓</span><span>Criado por quem tem +100 perfumes e já errou muito — pra você não errar</span></div>
                 </div>
-                
                 <div class="comparison-card fake">
-                    <h3 class="comparison-title fake">❌ Jeito Errado</h3>
-                    <p style="text-align: center; margin-bottom: 2rem; color: var(--text-medium);">
-                        (PDFs e YouTube)
-                    </p>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon cross">✕</span>
-                        <span>Informação genérica e desatualizada que não se aplica à sua realidade</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon cross">✕</span>
-                        <span>Sem diagnóstico personalizado - você continua no escuro</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon cross">✕</span>
-                        <span>Não acompanha sua evolução nem te mostra próximos passos</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon cross">✕</span>
-                        <span>Você fica perdido sozinho, sem saber o que fazer</span>
-                    </div>
-                    
-                    <div class="comparison-item">
-                        <span class="comparison-icon cross">✕</span>
-                        <span>Conteúdo estático que envelhece em 6 meses</span>
-                    </div>
+                    <h3 class="comparison-title fake">❌ YouTube e PDFs Gratuitos</h3>
+                    <div class="comparison-item"><span class="comparison-icon cross">✕</span><span>Conteúdo genérico, sem estrutura, sem aplicação prática</span></div>
+                    <div class="comparison-item"><span class="comparison-icon cross">✕</span><span>Sem progressão lógica — horas assistindo sem sair do lugar</span></div>
+                    <div class="comparison-item"><span class="comparison-icon cross">✕</span><span>Sem conceitos avançados de coleção equilibrada ou rotação</span></div>
+                    <div class="comparison-item"><span class="comparison-icon cross">✕</span><span>Você continua perdido, sem saber o que comprar</span></div>
+                    <div class="comparison-item"><span class="comparison-icon cross">✕</span><span>Conteúdo que envelhece e não acompanha sua evolução</span></div>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
+
+            <div style="text-align:center; margin-top:2rem;">
                 <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Quero o Jeito Certo Agora</a>
             </div>
         </div>
     </section>
 
-    <!-- Countdown Timer -->
+    <!-- COUNTDOWN -->
     <div class="container">
         <div class="countdown-container">
-            <div class="countdown-title">⏰ Esta Oferta Expira em:</div>
+            <div class="countdown-title">⏰ Oferta por tempo limitado:</div>
             <div class="countdown-timer" id="countdown-timer">
                 <div class="countdown-item">
                     <div class="countdown-number" id="countdown-minutes">14</div>
@@ -2223,501 +1079,233 @@
         </div>
     </div>
 
-    <!-- Price Section -->
+    <!-- PRICE -->
     <section class="price-section" id="oferta">
         <div class="container">
-            <h2 class="section-title">
-                Quanto Vale <span>Nunca Mais Errar</span><br>
-                na Compra de um Perfume?
-            </h2>
-            
+            <span class="section-label">Investimento</span>
+            <h2 class="section-title">Quanto Vale <em>Nunca Mais Errar</em><br>na Compra de um Perfume?</h2>
+
             <div class="price-questions">
-                <p class="price-question">
-                    Quanto tempo você já perdeu tentando entender o que comprar?
-                </p>
-                <p class="price-question">
-                    Quantas compras erradas você já fez?
-                </p>
-                <p class="price-question">
-                    Quanto dinheiro já gastou em perfumes que nunca usa direito?
-                </p>
+                <p class="price-question">Quanto tempo você já perdeu tentando descobrir o que comprar?</p>
+                <p class="price-question">Quantas compras erradas você já fez?</p>
+                <p class="price-question">Quanto dinheiro foi parar em frascos que você quase não usa?</p>
             </div>
-            
-            <p class="price-reality">
-                Se fosse para descobrir isso sozinho,<br>
-                <strong style="color: var(--primary-blue);">você LEVARIA ANOS E GASTARIA MUITO MAIS.</strong>
-            </p>
-            
+
+            <p class="price-reality">Se fosse aprender isso sozinho, você levaria anos — e gastaria <strong>muito mais em tentativa e erro.</strong></p>
+
             <div class="price-box">
                 <div class="price-fire">🔥</div>
-                <div class="price-value">R$ 97/ANO</div>
-                <p class="price-period">Acesso Completo ao Curso + App Premium</p>
-                
-                <div class="price-comparison">
-                    Menos que <strong>UM FRASCO</strong> de perfume importado<br>
-                    e o suficiente para <strong>ECONOMIZAR R$ 500+</strong> por ano<br>
-                    evitando compras erradas!
-                </div>
-                
-                <p class="price-savings">
-                    💰 O curso se paga na primeira compra estratégica
-                </p>
-                
-                <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" style="width: 100%; display: block; text-align: center; margin-top: 2rem;" onclick="fbq('track', 'AddToCart');">
-                    Quero Economizar Agora
-                </a>
-                
-                <!-- Trust Badges -->
+                <div class="price-value">R$ 147</div>
+                <p class="price-period">Pagamento Único — Acesso Completo ao Curso</p>
+                <div class="price-comparison">Menos que <strong>um frasco de perfume importado</strong> — e o suficiente para <strong>economizar R$ 500+ por ano</strong> evitando compras erradas.</div>
+                <p class="price-savings">💰 O curso se paga na primeira compra estratégica</p>
+
+                <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" style="width:100%;display:block;text-align:center;margin-top:1.4rem;" onclick="fbq('track', 'AddToCart');">Quero Economizar Agora</a>
+
                 <div class="trust-badges">
                     <div class="trust-badge">
-                        <img src="images/hotmart-logo.png" alt="Hotmart" class="trust-badge-icon">
-                        <div class="trust-badge-text">
-                            <strong>Pagamento Seguro</strong>
-                            Processado pela Hotmart
-                        </div>
+                        <div class="trust-badge-icon">🔒</div>
+                        <div class="trust-badge-text"><strong>Pagamento Seguro</strong>Processado pela Hotmart</div>
                     </div>
                     <div class="trust-badge">
-                        <div class="trust-badge-icon" style="font-size: 2.5rem;">🔒</div>
-                        <div class="trust-badge-text">
-                            <strong>100% Seguro</strong>
-                            Certificado SSL
-                        </div>
+                        <div class="trust-badge-icon">✅</div>
+                        <div class="trust-badge-text"><strong>100% Seguro</strong>Certificado SSL</div>
                     </div>
                 </div>
-                
+
                 <div class="guarantee">
                     <div class="guarantee-badge">✓ GARANTIA DE 7 DIAS</div>
-                    <p class="guarantee-text">
-                        Se você não achar que vale cada centavo,<br>
-                        devolvemos 100% do seu dinheiro.
-                    </p>
+                    <p class="guarantee-text">Se você não achar que vale cada centavo, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
                 </div>
             </div>
-            
-            <p style="margin-top: 3rem; font-size: 1.25rem; color: var(--text-medium);">
-                Você pode continuar errando ou pode<br>
-                <strong style="color: var(--primary-blue);">TER ACESSO IMEDIATO AGORA MESMO.</strong>
+
+            <p style="margin-top:2.5rem;font-size:1.15rem;color:var(--gray-mid);text-align:center;">
+                Você pode continuar no escuro — ou pode<br>
+                <strong style="color:var(--black);">ter acesso imediato agora mesmo.</strong>
             </p>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- TESTIMONIALS -->
     <section class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">
-                O Que Nossos <span>Alunos Dizem</span>
-            </h2>
-            <p class="section-subtitle">
-                Resultados reais de quem já usa o Mapa da Coleção Perfeita
-            </p>
-            
+            <span class="section-label">Resultados reais</span>
+            <h2 class="section-title">O Que Nossos <em>Alunos Dizem</em></h2>
+            <p class="section-subtitle">Depoimentos reais de homens que transformaram sua relação com a perfumaria.</p>
+
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <img src="images/depoimento-1.jpg" alt="Depoimento aluno - Cara achei sensacional" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Depoimento Real</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="images/depoimento-2.jpg" alt="Depoimento Instagram - Conteúdo autêntico e original" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Instagram Real</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="images/depoimento-3.jpg" alt="Depoimento aluno - Muito obrigado por sua análise" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Depoimento Real</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="images/depoimento-4.jpg" alt="Depoimento aluno - Análise vai me ajudar a diversificar" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Depoimento Real</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="images/depoimento-5.jpg" alt="Depoimento aluno - Continue com seu conteúdo" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Depoimento Real</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="images/depoimento-6.jpg" alt="Depoimento aluno - Que show mais completo impossível" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Depoimento Real</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="images/depoimento-7.jpg" alt="Depoimento aluno - Muito obrigado análise é puro ouro" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Depoimento Real</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="images/depoimento-8.jpg" alt="Depoimento aluno - Gostei demais das sugestões" class="testimonial-image">
-                    <div class="testimonial-caption">
-                        <span class="testimonial-verified-badge">✓ Depoimento Real</span>
-                    </div>
-                </div>
+                <div class="testimonial-card"><img src="images/depoimento-1.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-2.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Instagram Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-3.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-4.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-5.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-6.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-7.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-8.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">
-                Perguntas <span>Frequentes</span>
-            </h2>
-            
+            <span class="section-label">Dúvidas</span>
+            <h2 class="section-title">Perguntas <em>Frequentes</em></h2>
+
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">"Mas eu consigo fazer sozinho com YouTube?"</div>
-                    <div class="faq-answer">
-                        Pode tentar. Mas vai levar ANOS e gastar MUITO MAIS em tentativa e erro. A maioria dos conteúdos gratuitos é superficial, desatualizado e genérico. Você não tem diagnóstico personalizado, não tem IA analisando SUA coleção, e não tem um sistema estruturado. O Mapa te entrega tudo isso pronto em 4 aulas.
-                    </div>
+                    <div class="faq-question">"Mas eu não consigo aprender isso no YouTube de graça?"</div>
+                    <div class="faq-answer">Você pode tentar, mas vai levar MUITO mais tempo sem progressão lógica. No YouTube você encontra vídeos soltos, sem ordem, sem aprofundamento. Aqui você tem um sistema estruturado em 3 módulos, do básico ao avançado em 12 aulas objetivas.</div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">"O app funciona no meu celular?"</div>
-                    <div class="faq-answer">
-                        Sim! O app funciona em qualquer smartphone (Android ou iOS) através do navegador. Você pode até adicionar à tela inicial e usar como se fosse um app nativo. Funciona online e tem sincronização em nuvem.
-                    </div>
+                    <div class="faq-question">"Preciso ter experiência com perfumes antes?"</div>
+                    <div class="faq-answer">Zero. O Módulo 1 começa do absoluto zero. Se você só sabe que "perfume tem cheiro", já é suficiente para começar.</div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">"E se eu não gostar?"</div>
-                    <div class="faq-answer">
-                        7 dias de garantia incondicional. Se você assistir as aulas, usar o app e ainda achar que não valeu a pena, basta me enviar um email e eu devolvo 100% do seu dinheiro. Sem perguntas, sem burocracia.
-                    </div>
+                    <div class="faq-question">"E se eu não gostar do curso?"</div>
+                    <div class="faq-answer">7 dias de garantia incondicional. Se você assistir as aulas e achar que não valeu, basta enviar um email e eu devolvo 100% do seu dinheiro. Sem perguntas, sem burocracia.</div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">"Eu já tenho uma coleção grande. O curso serve pra mim?"</div>
-                    <div class="faq-answer">
-                        ESPECIALMENTE pra você! A IA vai analisar sua coleção atual, identificar lacunas, sobrecarga de famílias repetidas, e te mostrar exatamente o que está faltando. Você vai descobrir que provavelmente tem perfumes demais em algumas categorias e zero em outras. O respiro olfativo vai otimizar o uso de tudo que você já tem.
-                    </div>
+                    <div class="faq-question">"Já tenho uma coleção grande. O curso serve pra mim?"</div>
+                    <div class="faq-answer">ESPECIALMENTE pra você! No Módulo 3 você vai identificar lacunas e redundâncias na coleção atual, aplicar o respiro olfativo e montar seu sistema de rotação para levar tudo para outro nível.</div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">"Quanto tempo tenho de acesso?"</div>
-                    <div class="faq-answer">
-                        O acesso ao curso e ao app premium é anual (12 meses) pelo valor de R$ 97. Após esse período, você pode renovar se quiser continuar com todas as funcionalidades premium e atualizações. As aulas ficam disponíveis 24/7 durante todo o período.
-                    </div>
+                    <div class="faq-answer">Acesso por 12 meses ao valor de R$ 147, pagamento único. As aulas ficam disponíveis 24/7 durante todo o período, no seu ritmo.</div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">"Posso parcelar?"</div>
-                    <div class="faq-answer">
-                        Sim! Você pode parcelar no cartão de crédito ou pagar à vista via PIX/boleto. A plataforma de pagamento aceita todos os principais cartões e oferece máxima segurança nas transações.
-                    </div>
+                    <div class="faq-answer">Sim! Você pode parcelar no cartão de crédito ou pagar à vista via PIX/boleto. A Hotmart aceita todos os principais cartões com máxima segurança.</div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">"Isso funciona só pra perfumes importados caros?"</div>
-                    <div class="faq-answer">
-                        NÃO! O método funciona pra qualquer perfume, de qualquer faixa de preço. O que importa é montar uma coleção ESTRATÉGICA, não cara. Você pode ter uma coleção perfeita com perfumes nacionais e intermediários. O curso te ensina a escolher com inteligência, independente do orçamento.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">"Preciso entender de perfumaria antes?"</div>
-                    <div class="faq-answer">
-                        ZERO conhecimento prévio necessário. O curso começa do absoluto zero: o que são famílias olfativas, como funcionam, como combinar. Se você só sabe que "perfume tem cheiro", já é suficiente pra começar. Em 4 aulas você vai estar mais preparado que 95% dos homens.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">"A IA realmente funciona ou é marketing?"</div>
-                    <div class="faq-answer">
-                        É real. O app tem integração direta com Claude (Anthropic), uma das IAs mais avançadas do mercado. Ela analisa os perfumes que você cadastra, identifica padrões, lacunas e te dá recomendações personalizadas baseadas na SUA coleção específica. Não é chatbot genérico - é diagnóstico real.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">"Por que tão barato? Tem pegadinha?"</div>
-                    <div class="faq-answer">
-                        Sem pegadinha. O preço é acessível porque minha missão é democratizar o acesso à perfumaria de qualidade. Eu cansei de ver homens gastando R$ 800+ em perfumes errados por falta de informação. Prefiro ter mais pessoas transformando suas coleções do que cobrar R$ 500 e vender pra poucos. Simples assim.
-                    </div>
+                    <div class="faq-question">"Isso funciona só para perfumes caros?"</div>
+                    <div class="faq-answer">NÃO. O método funciona para qualquer perfume, de qualquer faixa de preço. O que importa é a estratégia, não o preço do frasco.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
+    <!-- FINAL CTA -->
+    <section class="final-cta">
         <div class="container">
-            <h2 class="section-title">
-                Como Eu Passei de <span>Invisível</span> a <span style="background: linear-gradient(135deg, var(--success-green), var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Imponente</span>
-            </h2>
-            
-            <div class="about-container">
-                <div>
-                    <img src="images/victor-guerise.jpg" alt="Victor Guerise - Criador do Mapa da Coleção Perfeita" class="about-image">
-                </div>
-                
-                <div class="about-content">
-                    <p>
-                        Vou ser direto com você: <strong>eu era invisível.</strong>
-                    </p>
-                    <p>
-                        Entrava em uma sala e ninguém notava. Passava despercebido em eventos, em reuniões, até em encontros. Usava perfume? Sim. Mas era qualquer um. O que estava em promoção. O que me davam. O mesmo perfume por anos.
-                    </p>
-                    <p>
-                        Até que levei um <strong>pé na bunda</strong> que me acordou pra vida. Foi aí que decidi: <strong>preciso me reinventar. AGORA.</strong>
-                    </p>
-                    <p>
-                        Mudei o estilo, comecei a me vestir melhor, me cuidar de verdade. E foi aí que descobri o poder da perfumaria. Não estou falando de cheirar bem. Estou falando de <strong>PRESENÇA. IMPONÊNCIA. IMPACTO.</strong>
-                    </p>
-                    <p>
-                        A primeira vez que entrei em uma sala usando o perfume certo, as pessoas <strong>viraram a cabeça</strong>. Não de forma brega, mas com respeito. Com curiosidade. Com atenção.
-                    </p>
-                    <p>
-                        Hoje tenho mais de <strong>100 perfumes</strong> na minha coleção. Cada um conta uma história. Cada um passa uma mensagem. E eu sei exatamente quando usar cada um deles.
-                    </p>
-                    <p>
-                        Mas nem sempre foi assim. <strong>Já caí em conto de vendedor.</strong> Já gastei R$ 800 em perfume que ficou encostado. Já comprei clones ruins. Já fui no hype e me arrependi.
-                    </p>
-                    <p>
-                        Foi por isso que criei o <strong>Mapa da Coleção Perfeita</strong>. Para que você não precise errar como eu errei. Para que você tenha o atalho que eu não tive. Para que você entre em qualquer lugar e seja <strong>NOTADO</strong>.
-                    </p>
-                    <p>
-                        Porque perfume não é sobre cheiro. É sobre <strong>COMO VOCÊ SE SENTE</strong> e <strong>COMO AS PESSOAS TE VEEM</strong>.
-                    </p>
-                    <p class="about-signature">
-                        "O cara que usa o perfume certo não precisa gritar. Ele entra na sala e todo mundo sabe."
-                    </p>
-                    <p style="margin-top: 2rem; text-align: right; font-weight: 600;">
-                        — Victor Guerise
-                    </p>
-                </div>
+            <h2 class="section-title">A Escolha é Sua:<br><em>Continuar Errando ou Acertar de Vez?</em></h2>
+            <p class="section-subtitle">Centenas de homens já transformaram sua relação com a perfumaria. Você vai ficar de fora?</p>
+
+            <div class="urgency-badge">
+                <p class="urgency-badge-text">⚡ Vagas com desconto — por tempo limitado</p>
+                <p class="urgency-badge-subtext">Preço pode aumentar a qualquer momento</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Final CTA Section -->
-    <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, rgba(43, 95, 127, 0.08) 0%, rgba(75, 155, 142, 0.08) 100%);">
-        <div class="hero-content">
-            <h2 class="section-title" style="margin-bottom: 2rem;">
-                A Escolha é Sua:<br>
-                <span>Continuar Errando ou Acertar de Vez?</span>
-            </h2>
-            <p class="hero-subheadline">
-                Centenas de homens já transformaram suas coleções.<br>
-                Você vai ficar de fora?
-            </p>
-            <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'Purchase', {value: 97.00, currency: 'BRL'});">Quero o Mapa Agora</a>
-            <p style="margin-top: 2rem; color: var(--text-medium); font-size: 0.95rem;">
-                ✓ Acesso imediato após pagamento<br>
-                ✓ Garantia de 7 dias<br>
-                ✓ Suporte via WhatsApp
+            <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" style="font-size:1.15rem; padding:1.3rem 4rem;" onclick="fbq('track', 'Purchase', {value: 147.00, currency: 'BRL'});">Quero o Curso Agora</a>
+
+            <p style="margin-top:2rem; color:rgba(255,255,255,0.45); font-size:0.9rem;">
+                ✓ Acesso imediato após pagamento &nbsp;·&nbsp; ✓ Garantia de 7 dias &nbsp;·&nbsp; ✓ Suporte via WhatsApp
             </p>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Mapa da Coleção Perfeita. Todos os direitos reservados.</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">
-                Desenvolvido com dedicação para homens que querem acertar na perfumaria
-            </p>
-        </div>
+        <p>&copy; 2025 Curso Prático da Perfumaria. Todos os direitos reservados.</p>
+        <p>Desenvolvido com dedicação para homens que querem dominar a perfumaria.</p>
     </footer>
 
-    <!-- Floating CTA -->
+    <!-- FLOATING CTA -->
     <div class="floating-cta">
-        <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" style="padding: 1rem 2rem; font-size: 1rem;" onclick="fbq('track', 'InitiateCheckout');">
-            Começar Agora
-        </a>
+        <a href="https://pay.hotmart.com/G103674727A?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Começar Agora</a>
     </div>
 
     <script>
         // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
                 const wasActive = item.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!wasActive) {
-                    item.classList.add('active');
-                }
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
             });
         });
 
-        // Smooth scroll for CTA buttons
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href.startsWith('#') && href.length > 1) {
                     e.preventDefault();
                     const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Hide floating CTA when near bottom
+        // Hide floating CTA near footer
         window.addEventListener('scroll', () => {
-            const floatingCta = document.querySelector('.floating-cta');
+            const fc = document.querySelector('.floating-cta');
             const footer = document.querySelector('footer');
-            const footerTop = footer.offsetTop;
-            const scrollPosition = window.scrollY + window.innerHeight;
-            
-            if (scrollPosition > footerTop - 100) {
-                floatingCta.style.opacity = '0';
-                floatingCta.style.pointerEvents = 'none';
-            } else {
-                floatingCta.style.opacity = '1';
-                floatingCta.style.pointerEvents = 'auto';
-            }
+            if (!footer) return;
+            const show = (window.scrollY + window.innerHeight) <= (footer.offsetTop - 100);
+            fc.style.opacity = show ? '1' : '0';
+            fc.style.pointerEvents = show ? 'auto' : 'none';
         });
 
-        // Interactive Pain Point Checkboxes
         document.addEventListener('DOMContentLoaded', function() {
-            const painCards = document.querySelectorAll('.pain-card');
-            const painVerdict = document.querySelector('.pain-verdict');
-            let checkedCount = 0;
-
-            painCards.forEach(card => {
+            // Pain cards
+            document.querySelectorAll('.pain-card').forEach(card => {
                 card.addEventListener('click', function() {
                     this.classList.toggle('checked');
-                    
-                    // Update count
-                    checkedCount = document.querySelectorAll('.pain-card.checked').length;
-                    
-                    // Activate verdict glow if 2 or more checked
-                    if (checkedCount >= 2) {
-                        painVerdict.classList.add('active');
-                    } else {
-                        painVerdict.classList.remove('active');
+                    const count = document.querySelectorAll('.pain-card.checked').length;
+                    document.querySelector('.pain-verdict').classList.toggle('active', count >= 2);
+                });
+            });
+
+            // Countdown
+            let timeLeft = 14 * 60 + 47;
+            function updateTimer() {
+                const m = Math.floor(timeLeft / 60);
+                const s = timeLeft % 60;
+                document.getElementById('countdown-minutes').textContent = String(m).padStart(2, '0');
+                document.getElementById('countdown-seconds').textContent = String(s).padStart(2, '0');
+                timeLeft = timeLeft > 0 ? timeLeft - 1 : 14 * 60 + 47;
+            }
+            updateTimer();
+            setInterval(updateTimer, 1000);
+
+            // Live viewers
+            const lv = document.getElementById('live-viewers-count');
+            if (lv) {
+                lv.textContent = Math.floor(Math.random() * 34) + 12;
+                setInterval(() => { lv.textContent = Math.floor(Math.random() * 34) + 12; }, Math.random() * 7000 + 8000);
+            }
+
+            // Economy counter
+            const economyObserver = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        const el = document.getElementById('economy-amount');
+                        const target = 75427;
+                        const steps = 60;
+                        let current = 0;
+                        const inc = target / steps;
+                        const timer = setInterval(() => {
+                            current += inc;
+                            if (current >= target) { current = target; clearInterval(timer); }
+                            el.textContent = 'R$ ' + Math.floor(current).toLocaleString('pt-BR');
+                        }, 2000 / steps);
+                        economyObserver.unobserve(e.target);
                     }
                 });
             });
-        });
+            const ec = document.getElementById('economy-counter');
+            if (ec) economyObserver.observe(ec);
 
-        // Facebook Pixel Custom Events
-        document.addEventListener('DOMContentLoaded', function() {
-            // Track video views if you add a video later
-            // Track scroll depth
+            // Scroll depth
             let scrollDepth = 0;
             window.addEventListener('scroll', function() {
-                const currentScroll = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
-                if (currentScroll > 25 && scrollDepth < 25) {
-                    fbq('trackCustom', 'Scroll25');
-                    scrollDepth = 25;
-                } else if (currentScroll > 50 && scrollDepth < 50) {
-                    fbq('trackCustom', 'Scroll50');
-                    scrollDepth = 50;
-                } else if (currentScroll > 75 && scrollDepth < 75) {
-                    fbq('trackCustom', 'Scroll75');
-                    scrollDepth = 75;
-                }
+                const pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+                if (pct > 25 && scrollDepth < 25) { fbq('trackCustom','Scroll25'); scrollDepth = 25; }
+                else if (pct > 50 && scrollDepth < 50) { fbq('trackCustom','Scroll50'); scrollDepth = 50; }
+                else if (pct > 75 && scrollDepth < 75) { fbq('trackCustom','Scroll75'); scrollDepth = 75; }
             });
-
-            // Countdown Timer (14:47 minutes)
-            function startCountdown() {
-                const countdownElement = document.getElementById('countdown-timer');
-                if (!countdownElement) return;
-
-                let timeLeft = 14 * 60 + 47; // 14 minutes and 47 seconds
-
-                function updateTimer() {
-                    const minutes = Math.floor(timeLeft / 60);
-                    const seconds = timeLeft % 60;
-
-                    document.getElementById('countdown-minutes').textContent = 
-                        String(minutes).padStart(2, '0');
-                    document.getElementById('countdown-seconds').textContent = 
-                        String(seconds).padStart(2, '0');
-
-                    if (timeLeft > 0) {
-                        timeLeft--;
-                    } else {
-                        // Reset timer when it hits 0
-                        timeLeft = 14 * 60 + 47;
-                    }
-                }
-
-                updateTimer();
-                setInterval(updateTimer, 1000);
-            }
-
-            // Live Viewers Counter
-            function updateLiveViewers() {
-                const viewersElement = document.getElementById('live-viewers-count');
-                if (!viewersElement) return;
-
-                function randomViewers() {
-                    return Math.floor(Math.random() * (45 - 12 + 1)) + 12;
-                }
-
-                viewersElement.textContent = randomViewers();
-
-                // Update every 8-15 seconds
-                setInterval(() => {
-                    viewersElement.textContent = randomViewers();
-                }, Math.random() * (15000 - 8000) + 8000);
-            }
-
-            // Economy Counter Animation
-            function animateEconomyCounter() {
-                const counterElement = document.getElementById('economy-amount');
-                if (!counterElement) return;
-
-                const targetAmount = 75427; // 150 alunos × R$500+ média
-                const duration = 2000; // 2 seconds
-                const steps = 60;
-                const increment = targetAmount / steps;
-                let current = 0;
-
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= targetAmount) {
-                        current = targetAmount;
-                        clearInterval(timer);
-                    }
-                    counterElement.textContent = 'R$ ' + Math.floor(current).toLocaleString('pt-BR');
-                }, duration / steps);
-            }
-
-            // Initialize when economy counter is visible
-            const economyObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateEconomyCounter();
-                        economyObserver.unobserve(entry.target);
-                    }
-                });
-            });
-
-            const economyCounter = document.getElementById('economy-counter');
-            if (economyCounter) {
-                economyObserver.observe(economyCounter);
-            }
-
-            // Start all functions
-            startCountdown();
-            updateLiveViewers();
         });
     </script>
 
