@@ -738,9 +738,33 @@
         .bonus-mockup { flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
         .bonus-mockup-img { width: 260px; max-width: 100%; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5)); }
 
+        .bonus-media {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            width: 320px;
+        }
+
+        .bonus-mockup-img {
+            width: 100%;
+            max-width: 320px;
+            filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5));
+        }
+
+        .bonus-video {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 12px;
+            border: 2px solid rgba(232,93,4,0.4);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+        }
+
         @media (max-width: 768px) {
             .bonus-card { flex-direction: column; gap: 1.2rem; }
-            .bonus-mockup-img { width: 200px; }
+            .bonus-media { width: 100%; }
+            .bonus-mockup-img, .bonus-video { max-width: 100%; }
             .bonus-box { padding: 2rem 1.5rem; }
         }
 
@@ -1055,8 +1079,11 @@
                 </div>
 
                 <div class="bonus-card">
-                    <div class="bonus-mockup">
+                    <div class="bonus-media">
                         <img src="images/app-mockup.png" alt="Mapa da Coleção Perfeita — App com I.A." class="bonus-mockup-img">
+                        <video class="bonus-video" autoplay muted loop playsinline>
+                            <source src="images/app-demo.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div class="bonus-content">
                         <h3 class="bonus-name">Mapa da Coleção Perfeita</h3>
