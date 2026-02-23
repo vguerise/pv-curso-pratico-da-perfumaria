@@ -736,7 +736,6 @@
         }
 
         .bonus-mockup { flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-        .bonus-mockup-img { width: 260px; max-width: 100%; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5)); }
 
         .bonus-media {
             flex-shrink: 0;
@@ -744,29 +743,19 @@
             flex-direction: column;
             align-items: center;
             gap: 1.2rem;
-            width: 320px;
+            width: 380px;
         }
 
         .bonus-mockup-img {
             width: 100%;
-            max-width: 320px;
-            filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5));
-        }
-
-        .bonus-video {
-            width: 180px;
-            max-width: 180px;
-            border-radius: 16px;
-            border: 2px solid rgba(232,93,4,0.4);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.5);
-            aspect-ratio: 9/16;
-            object-fit: cover;
+            max-width: 380px;
+            filter: drop-shadow(0 16px 40px rgba(0,0,0,0.6));
         }
 
         @media (max-width: 768px) {
             .bonus-card { flex-direction: column; gap: 1.2rem; }
             .bonus-media { width: 100%; }
-            .bonus-mockup-img, .bonus-video { max-width: 100%; }
+            .bonus-mockup-img { max-width: 100%; }
             .bonus-box { padding: 2rem 1.5rem; }
         }
 
@@ -801,46 +790,37 @@
         <div class="hero-container">
             <div class="hero-badge">🎓 Curso em Vídeo &nbsp;·&nbsp; 3 Módulos &nbsp;·&nbsp; 10 Aulas &nbsp;·&nbsp; 🤖 App com I.A. Integrada</div>
 
-            <div class="hero-question-box">
-                <div class="hero-question-icon">❓</div>
-                <div class="hero-question-text">
-                    Você já gastou dinheiro em perfume que nunca usa — ou entrou em loja e saiu sem saber o que escolher?
-                </div>
-            </div>
-
             <h1 class="hero-headline">
-                Chega de usar qualquer perfume. Aprenda a escolher o que faz as pessoas se virarem quando você <span class="highlight">entra na sala.</span>
-            </h1>
+                Pare de comprar perfume no escuro — aprenda o básico da perfumaria e escolha fragrâncias com segurança, <span class="highlight">mesmo começando do zero.</span>
             </h1>
 
             <p class="hero-subheadline">
-                Do zero ao expert — mesmo que hoje você não entenda absolutamente nada de perfumaria.<br>
-                <strong>Sem enrolação. Sem desperdício. Com resultado real.</strong>
+                Um curso prático e direto ao ponto que ensina exatamente o que você precisa saber antes de comprar qualquer perfume — sem termos complicados e sem enrolação.
             </p>
 
             <ul class="hero-checklist">
                 <li class="hero-checklist-item">
-                    <span class="hci">◆</span>
-                    <span>Fundamentos completos: concentrações, pirâmide olfativa, famílias e muito mais</span>
+                    <span class="hci" style="color:#E05252;">✔</span>
+                    <span>Já comprou perfume e depois se arrependeu</span>
                 </li>
                 <li class="hero-checklist-item">
-                    <span class="hci">◆</span>
-                    <span>Como descobrir seu perfil olfativo e montar seus primeiros 3 perfumes perfeitos</span>
+                    <span class="hci" style="color:#E05252;">✔</span>
+                    <span>Não entende nada de notas, fixação ou projeção</span>
                 </li>
                 <li class="hero-checklist-item">
-                    <span class="hci">◆</span>
-                    <span>Técnicas avançadas: layering, coleção equilibrada e respiro olfativo</span>
+                    <span class="hci" style="color:#E05252;">✔</span>
+                    <span>Fica perdido quando entra em uma perfumaria</span>
                 </li>
                 <li class="hero-checklist-item">
-                    <span class="hci">◆</span>
-                    <span>🎁 <strong>Bônus exclusivo:</strong> app com I.A. integrada para os primeiros 100 alunos</span>
+                    <span class="hci" style="color:#2A9D5C;">✅</span>
+                    <span><strong>Quero comprar com confiança de uma vez por todas</strong></span>
                 </li>
             </ul>
 
-            <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero acesso ao curso agora!</a>
+            <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero aprender a escolher perfume</a>
 
             <p style="margin-top: 1.4rem; color: rgba(255,255,255,0.45); font-size: 0.87rem;">
-                ✓ Acesso imediato &nbsp;·&nbsp; ✓ Garantia de 7 dias &nbsp;·&nbsp; ✓ Aulas em vídeo HD
+                Acesso imediato &nbsp;·&nbsp; Curso 100% online &nbsp;·&nbsp; Garantia de 7 dias
             </p>
         </div>
     </section>
@@ -858,45 +838,39 @@
     <section class="intro-section">
         <div class="container">
             <div class="intro-box">
-                <p class="intro-hook">Você quer usar perfume — mas quando chega na loja, bate aquela <strong>insegurança.</strong></p>
-                <p class="intro-text">Qual escolher? Vai durar? Vai combinar com você? Aí você ou compra qualquer coisa, ou sai de mãos vazias. E quando arrisca, às vezes acerta — mas na maioria das vezes <strong>joga dinheiro fora.</strong></p>
-                <p class="intro-text">A maioria dos homens nunca aprendeu perfumaria de verdade. É tudo tentativa e erro. Ninguém ensinou as regras, os atalhos, o que realmente importa na hora de escolher.</p>
-                <p class="intro-cta-line">Isso acaba agora.</p>
+                <p class="intro-hook">Você entra na loja. Testa dois, três, quatro perfumes. O vendedor fala termos que você não entende. Você decide <strong>"no feeling".</strong></p>
+                <p class="intro-text">Dias depois percebe: não combinava com você. Não fixa direito. Não usa quase nunca.</p>
+                <p class="intro-text" style="margin-top:1rem; padding-top:1rem; border-top:1px solid var(--gray-light);">O problema não é falta de opções. <strong>É falta de conhecimento básico.</strong> E enquanto você não aprende isso, vai continuar comprando no impulso.</p>
             </div>
         </div>
     </section>
 
-    <!-- PAIN POINTS -->
+    <!-- QUEBRA DE CRENÇA -->
     <section class="pain-section">
         <div class="container">
-            <span class="section-label">Teste rápido</span>
-            <h2 class="section-title">Você Precisa deste Curso?</h2>
-            <p class="section-subtitle">Marque as situações que você já viveu:</p>
+            <span class="section-label">Antes de continuar</span>
+            <h2 class="section-title">Você <em>Não Precisa</em> de Nada Disso</h2>
 
             <div class="pain-grid">
-                <div class="pain-card">
-                    <div class="pain-checkbox"></div>
-                    <p class="pain-text">Você compra sempre o mesmo perfume porque tem medo de errar</p>
+                <div class="pain-card" style="cursor:default;">
+                    <div style="font-size:1.5rem; margin-bottom:0.5rem;">❌</div>
+                    <p class="pain-text">Ter 20 perfumes na coleção</p>
                 </div>
-                <div class="pain-card">
-                    <div class="pain-checkbox"></div>
-                    <p class="pain-text">Você não sabe o que procurar quando entra numa loja de perfumes</p>
+                <div class="pain-card" style="cursor:default;">
+                    <div style="font-size:1.5rem; margin-bottom:0.5rem;">❌</div>
+                    <p class="pain-text">Entender termos técnicos complicados</p>
                 </div>
-                <div class="pain-card">
-                    <div class="pain-checkbox"></div>
-                    <p class="pain-text">Você já comprou por hype de influenciador e se arrependeu</p>
+                <div class="pain-card" style="cursor:default;">
+                    <div style="font-size:1.5rem; margin-bottom:0.5rem;">❌</div>
+                    <p class="pain-text">Gastar caro para cheirar bem</p>
                 </div>
-                <div class="pain-card">
-                    <div class="pain-checkbox"></div>
-                    <p class="pain-text">Você tem perfumes em casa que quase nunca usa</p>
+                <div class="pain-card" style="cursor:default; border-color:var(--orange); background:rgba(232,93,4,0.04);">
+                    <div style="font-size:1.5rem; margin-bottom:0.5rem;">✅</div>
+                    <p class="pain-text"><strong>Você precisa saber o essencial</strong> — o que realmente importa antes de tirar o cartão do bolso.</p>
                 </div>
             </div>
 
-            <p class="pain-verdict">Se você marcou 2 ou mais — o Curso Prático da Perfumaria é exatamente pra você.</p>
-
-            <div style="text-align:center; margin-top:2.5rem;">
-                <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Resolver Isso Agora</a>
-            </div>
+            <p class="pain-verdict active" style="opacity:1;">É isso que o Curso Prático da Perfumaria ensina.</p>
         </div>
     </section>
 
@@ -937,12 +911,11 @@
                     <img src="images/victor-guerise.jpg" alt="Victor Guerise" class="about-image">
                 </div>
                 <div class="about-content">
-                    <p>Vou ser direto com você: <strong>eu era invisível.</strong></p>
-                    <p>Entrava em uma sala e ninguém notava. Usava perfume? Sim. Mas era qualquer um — o que estava em promoção, o que me davam, o mesmo há anos.</p>
-                    <p>Até que levei um <strong>pé na bunda</strong> que me acordou. Mudei o estilo, comecei a me cuidar de verdade. E foi aí que descobri o poder real da perfumaria. Não de cheirar bem — mas de ter <strong>PRESENÇA. IMPONÊNCIA. IMPACTO.</strong></p>
-                    <p>A primeira vez que entrei numa sala usando o perfume certo, as pessoas <strong>viraram a cabeça.</strong> Com respeito. Com curiosidade.</p>
-                    <p>Hoje tenho mais de <strong>100 perfumes</strong> na coleção. Mas já errei muito: já caí em conto de vendedor, gastei R$ 800 em perfume encostado, comprei clones ruins.</p>
-                    <p>Foi por isso que criei o <strong>Curso Prático da Perfumaria</strong> — para que você não precise errar como eu errei.</p>
+                    <p>Depois de testar centenas de fragrâncias e estudar perfumaria masculina por anos, percebi que a maioria dos homens comete os mesmos erros.</p>
+                    <p>Compra no impulso. Confia no vendedor. Segue indicação de influenciador. E acaba com perfumes encostados, dinheiro perdido e zero confiança na hora de escolher.</p>
+                    <p>Eu também passei por isso. Gastei R$ 800 em perfume que nunca usei. Caí em conto de vendedor. Comprei clones ruins achando que eram originais.</p>
+                    <p>Foi aí que decidi aprender de verdade — e o resultado mudou completamente minha relação com a perfumaria. Hoje tenho mais de <strong>100 perfumes</strong> e sei exatamente o que comprar antes mesmo de entrar na loja.</p>
+                    <p>Criei o <strong>Curso Prático da Perfumaria</strong> para simplificar o que realmente importa e eliminar o excesso de informação que só confunde quem está começando.</p>
                     <p class="about-signature">"O cara que usa o perfume certo não precisa gritar. Ele entra na sala e todo mundo sabe."</p>
                     <p style="margin-top:1.3rem; font-weight:700; color:var(--black);">— Victor Guerise</p>
                 </div>
@@ -950,48 +923,48 @@
         </div>
     </section>
 
-    <!-- SOLUTION -->
+    <!-- SOLUTION / O QUE VOCÊ VAI APRENDER -->
     <section class="solution-section" id="curso">
         <div class="container">
-            <span class="section-label" style="color:var(--orange);">Apresentando</span>
-            <h2 class="section-title" style="color:white;">Curso Prático da Perfumaria</h2>
-            <p class="section-subtitle">O método completo para o homem que quer dominar a perfumaria — do zero ao colecionador consciente.</p>
+            <span class="section-label" style="color:var(--orange);">O Curso</span>
+            <h2 class="section-title">O Curso Prático da Perfumaria</h2>
+            <p class="section-subtitle">Criado para homens que querem entender o básico de forma simples, escolher com confiança e parar de errar — sem linguagem técnica desnecessária, sem teoria inútil, sem complicação.</p>
 
             <div class="course-features">
                 <div class="feature-card">
-                    <div class="feature-icon">🎓</div>
-                    <h3 class="feature-title">3 Módulos Completos</h3>
-                    <p class="feature-description">Do fundamentos à coleção avançada. Progressão lógica e didática, sem pular etapas.</p>
+                    <div class="feature-icon">✔</div>
+                    <h3 class="feature-title">Identificar se combina</h3>
+                    <p class="feature-description">Como identificar rapidamente se um perfume combina com você antes de comprar.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎬</div>
-                    <h3 class="feature-title">10 Aulas em Vídeo</h3>
-                    <p class="feature-description">Aulas curtas de 5 a 10 minutos. Você aprende no seu ritmo, sem enrolação.</p>
+                    <div class="feature-icon">✔</div>
+                    <h3 class="feature-title">Fixação e Projeção</h3>
+                    <p class="feature-description">Como entender fixação e projeção na prática — sem decorar termos complicados.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">👃</div>
-                    <h3 class="feature-title">Treinamento do Nariz</h3>
-                    <p class="feature-description">Aprenda a identificar, comparar e analisar fragrâncias com precisão crescente.</p>
+                    <div class="feature-icon">✔</div>
+                    <h3 class="feature-title">Perfume para cada ocasião</h3>
+                    <p class="feature-description">Como escolher a fragrância certa para o trabalho, encontro, evento ou dia a dia.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧩</div>
-                    <h3 class="feature-title">Perfil Olfativo Próprio</h3>
-                    <p class="feature-description">Descubra seu tipo (Fresco, Elegante, Intenso ou Criativo) e monte a coleção ideal.</p>
+                    <div class="feature-icon">✔</div>
+                    <h3 class="feature-title">Base inteligente</h3>
+                    <p class="feature-description">Como montar uma base inteligente de fragrâncias que funciona para qualquer situação.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🛒</div>
-                    <h3 class="feature-title">Estratégia de Compra</h3>
-                    <p class="feature-description">Onde comprar, quando comprar, como identificar falsificações e usar decants.</p>
+                    <div class="feature-icon">✔</div>
+                    <h3 class="feature-title">Zero compras por impulso</h3>
+                    <p class="feature-description">Como evitar compras por impulso e parar de gastar dinheiro em perfumes que você não usa.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3 class="feature-title">Layering e Rotação</h3>
-                    <p class="feature-description">Técnicas avançadas de combinação e sistema de rotação para maximizar sua coleção.</p>
+                    <div class="feature-icon">✔</div>
+                    <h3 class="feature-title">Autonomia total</h3>
+                    <p class="feature-description">Você sai sabendo exatamente o que analisar antes de comprar qualquer perfume.</p>
                 </div>
             </div>
 
             <div style="text-align:center; margin-top:2rem;">
-                <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Quero Começar Agora</a>
+                <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Quero aprender a escolher perfume</a>
             </div>
         </div>
     </section>
@@ -1083,9 +1056,6 @@
                 <div class="bonus-card">
                     <div class="bonus-media">
                         <img src="images/app-mockup.png" alt="Mapa da Coleção Perfeita — App com I.A." class="bonus-mockup-img">
-                        <video class="bonus-video" autoplay muted loop playsinline>
-                            <source src="images/app-demo.mp4" type="video/mp4">
-                        </video>
                     </div>
                     <div class="bonus-content">
                         <h3 class="bonus-name">Mapa da Coleção Perfeita</h3>
@@ -1196,32 +1166,25 @@
     <section class="price-section" id="oferta">
         <div class="container">
             <span class="section-label">Investimento</span>
-            <h2 class="section-title">Quanto Vale <em>Nunca Mais Errar</em><br>na Compra de um Perfume?</h2>
-
-            <div class="price-questions">
-                <p class="price-question">Quanto tempo você já perdeu tentando descobrir o que comprar?</p>
-                <p class="price-question">Quantas compras erradas você já fez?</p>
-                <p class="price-question">Quanto dinheiro foi parar em frascos que você quase não usa?</p>
-            </div>
-
-            <p class="price-reality">Se fosse aprender isso sozinho, você levaria anos — e gastaria <strong>muito mais em tentativa e erro.</strong></p>
+            <h2 class="section-title">Tudo Isso por <em>Menos que um Perfume<br>Comprado Errado</em></h2>
 
             <div class="price-box">
                 <div class="price-fire">🔥</div>
                 <div class="price-value">R$ 147</div>
-                <p class="price-period">Pagamento Único — Acesso Completo ao Curso</p>
+                <p class="price-period">Pagamento Único — Acesso Completo</p>
 
                 <div class="price-includes">
-                    <div class="price-includes-title">O que está incluso:</div>
+                    <div class="price-includes-title">Ao se inscrever hoje, você recebe:</div>
                     <div class="price-includes-item"><span>✓</span> Curso Prático da Perfumaria — 10 aulas em vídeo</div>
+                    <div class="price-includes-item"><span>✓</span> Acesso imediato após o pagamento</div>
+                    <div class="price-includes-item"><span>✓</span> Atualizações do conteúdo inclusas</div>
                     <div class="price-includes-item bonus-highlight"><span>🎁</span> <strong>Bônus: App Mapa da Coleção Perfeita com I.A.</strong> <span class="price-includes-free">GRÁTIS</span></div>
-                    <div class="price-includes-item"><span>✓</span> Acesso por 12 meses + garantia de 7 dias</div>
+                    <div class="price-includes-item"><span>✓</span> Garantia incondicional de 7 dias</div>
                 </div>
 
-                <div class="price-comparison">Menos que <strong>um frasco de perfume importado</strong> — e o suficiente para <strong>economizar R$ 500+ por ano</strong> evitando compras erradas.</div>
-                <p class="price-savings">💰 O curso se paga na primeira compra estratégica</p>
+                <div class="price-comparison">Investimento menor que o valor de um perfume comprado errado.</div>
 
-                <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="width:100%;display:block;text-align:center;margin-top:1.4rem;" onclick="fbq('track', 'AddToCart');">Quero Economizar Agora</a>
+                <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="width:100%;display:block;text-align:center;margin-top:1.4rem;" onclick="fbq('track', 'AddToCart');">Quero aprender a escolher perfume</a>
 
                 <div class="trust-badges">
                     <div class="trust-badge">
@@ -1236,23 +1199,18 @@
 
                 <div class="guarantee">
                     <div class="guarantee-badge">✓ GARANTIA DE 7 DIAS</div>
-                    <p class="guarantee-text">Se você não achar que vale cada centavo, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+                    <p class="guarantee-text">Você tem 7 dias para testar. Se não fizer sentido para você, basta pedir reembolso. Simples assim. Sem risco.</p>
                 </div>
             </div>
-
-            <p style="margin-top:2.5rem;font-size:1.15rem;color:var(--gray-mid);text-align:center;">
-                Você pode continuar no escuro — ou pode<br>
-                <strong style="color:var(--black);">ter acesso imediato agora mesmo.</strong>
-            </p>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials-section">
         <div class="container">
-            <span class="section-label">Resultados reais</span>
-            <h2 class="section-title">O Que Nossos <em>Alunos Dizem</em></h2>
-            <p class="section-subtitle">Depoimentos reais de homens que transformaram sua relação com a perfumaria.</p>
+            <span class="section-label">Prova social</span>
+            <h2 class="section-title">Homens que <em>Pararam de Errar</em></h2>
+            <p class="section-subtitle">Mais segurança ao comprar. Menos arrependimento. Escolhas mais inteligentes.</p>
 
             <div class="testimonials-grid">
                 <div class="testimonial-card"><img src="images/depoimento-1.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
@@ -1309,15 +1267,17 @@
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2 class="section-title">Pronto para <em>Escolher o Perfume Certo</em><br>de Vez?</h2>
-            <p class="section-subtitle">Junte-se a centenas de homens que pararam de errar na compra e passaram a usar perfume com confiança.</p>
+            <h2 class="section-title">Você Pode <em>Continuar Assim</em>...</h2>
+            <p class="section-subtitle" style="margin-bottom:1.5rem;">Comprando no impulso. Errando na escolha. Gastando dinheiro à toa.</p>
+            <p class="section-subtitle"><strong style="color:white;">Ou pode aprender o básico que muda completamente sua forma de comprar perfume.</strong></p>
+            <p class="section-subtitle" style="margin-top:0.5rem;">A decisão é sua.</p>
 
             <div class="urgency-badge">
                 <p class="urgency-badge-text">⚡ Vagas com desconto — por tempo limitado</p>
                 <p class="urgency-badge-subtext">Preço pode aumentar a qualquer momento</p>
             </div>
 
-            <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="font-size:1.15rem; padding:1.3rem 4rem;" onclick="fbq('track', 'Purchase', {value: 147.00, currency: 'BRL'});">Quero aprender a escolher o perfume certo</a>
+            <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="font-size:1.15rem; padding:1.3rem 4rem;" onclick="fbq('track', 'Purchase', {value: 147.00, currency: 'BRL'});">Quero dominar o básico da perfumaria agora</a>
 
             <p style="margin-top:2rem; color:rgba(255,255,255,0.45); font-size:0.9rem;">
                 ✓ Acesso imediato após pagamento &nbsp;·&nbsp; ✓ Garantia de 7 dias &nbsp;·&nbsp; ✓ Suporte via WhatsApp
@@ -1333,7 +1293,7 @@
 
     <!-- FLOATING CTA -->
     <div class="floating-cta">
-        <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero aprender a escolher o perfume certo</a>
+        <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">Quero aprender a escolher perfume</a>
     </div>
 
     <script>
