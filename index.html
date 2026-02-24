@@ -613,9 +613,11 @@
         .price-includes-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.97rem; color: var(--charcoal); padding: 0.4rem 0; border-bottom: 1px solid var(--gray-light); }
         .price-includes-item:last-child { border-bottom: none; }
         .price-includes-item span:first-child { color: var(--success); font-weight: 700; flex-shrink: 0; }
-        .bonus-highlight { background: rgba(232,93,4,0.07); border-radius: 8px; padding: 0.7rem 0.8rem !important; margin: 0.4rem 0; border: 1.5px solid rgba(232,93,4,0.3) !important; position: relative; }
-        .bonus-highlight span:first-child { font-size: 1.1rem; }
-        .price-includes-free { margin-left: auto; background: var(--orange); color: white; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.7rem; border-radius: 20px; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+        .bonus-highlight { background: rgba(232,93,4,0.07); border-radius: 8px; padding: 0.7rem 0.8rem !important; margin: 0.4rem 0; border: 1.5px solid rgba(232,93,4,0.3) !important; align-items: flex-start !important; }
+        .bonus-highlight span:first-child { font-size: 1.1rem; margin-top: 0.1rem; }
+        .bonus-highlight-content { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+        .bonus-highlight-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+        .price-includes-free { background: var(--orange); color: white; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.7rem; border-radius: 20px; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
 
         /* BONUS */
         .bonus-section { background: var(--off-white); }
@@ -1185,7 +1187,16 @@
                     <div class="price-includes-item"><span>✓</span> Curso Prático da Perfumaria — 11 aulas em vídeo</div>
                     <div class="price-includes-item"><span>✓</span> Acesso imediato após o pagamento</div>
                     <div class="price-includes-item"><span>✓</span> Atualizações do conteúdo inclusas</div>
-                    <div class="price-includes-item bonus-highlight"><span>🎁</span> <strong>Bônus: App Mapa da Coleção Perfeita com I.A.</strong> <span style="color:var(--gray-mid); text-decoration:line-through; font-size:0.85rem; margin-left:auto; white-space:nowrap;">R$ 97</span> <span class="price-includes-free">incluso para os 100 primeiros!</span></div>
+                    <div class="price-includes-item bonus-highlight">
+                        <span>🎁</span>
+                        <div class="bonus-highlight-content">
+                            <strong>Bônus: App Mapa da Coleção Perfeita com I.A.</strong>
+                            <div class="bonus-highlight-meta">
+                                <span style="color:var(--gray-mid); text-decoration:line-through; font-size:0.85rem; white-space:nowrap;">R$ 97</span>
+                                <span class="price-includes-free">incluso para os 100 primeiros!</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="price-includes-item"><span>✓</span> Garantia incondicional de 7 dias</div>
                 </div>
 
