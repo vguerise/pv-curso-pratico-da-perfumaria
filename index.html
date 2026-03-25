@@ -26,7 +26,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -61,7 +61,7 @@
         h1, h2, h3 { font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.2; }
 
         .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
-        section { padding: 4rem 0; }
+        section { padding: 5.5rem 0; }
 
         .section-label {
             display: block;
@@ -148,22 +148,14 @@
         .floating-cta { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
         .floating-cta .cta-button { padding: 0.85rem 1.7rem; font-size: 0.92rem; box-shadow: 0 8px 28px rgba(232,93,4,0.4); }
 
-        .live-viewers {
-            position: fixed; top: 80px; right: 20px;
-            background: white;
-            border: 2px solid var(--orange);
-            border-radius: 50px;
-            padding: 0.5rem 1.1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            z-index: 998;
-            display: flex; align-items: center; gap: 0.5rem;
-            animation: slideIn 0.5s ease;
+        .live-viewers { display: none; }
+
+        /* Grain overlay sutil no hero */
+        .hero-grain {
+            position: absolute; inset: 0; z-index: 2; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity: 0.35;
         }
-        @keyframes slideIn { from { transform: translateX(150px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        .live-dot { width: 8px; height: 8px; background: #ff4444; border-radius: 50%; animation: blink 1.5s infinite; }
-        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-        .live-viewers-text { font-size: 0.82rem; font-weight: 600; color: var(--black); }
-        .live-viewers-number { color: var(--orange); font-weight: 800; }
 
         /* HERO */
         .hero {
@@ -181,13 +173,13 @@
             position: absolute; inset: 0;
             background-image: url('images/victor-terno.jpg');
             background-size: cover; background-position: center right;
-            opacity: 0.38; z-index: 1;
+            opacity: 0.52; z-index: 1;
         }
 
         .hero::after {
             content: '';
             position: absolute; inset: 0;
-            background: linear-gradient(to right, rgba(10,10,10,0.97) 30%, rgba(10,10,10,0.6) 60%, rgba(10,10,10,0.1) 100%);
+            background: linear-gradient(to right, rgba(10,10,10,0.96) 25%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.08) 100%);
             z-index: 1;
         }
 
@@ -220,7 +212,8 @@
 
         .hero-headline {
             font-size: clamp(1.9rem, 4.5vw, 3rem);
-            font-weight: 900;
+            font-weight: 700;
+            font-family: 'Playfair Display', Georgia, serif;
             color: var(--white);
             line-height: 1.28;
             margin-bottom: 1.5rem;
@@ -766,7 +759,7 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .pain-grid, .ba-grid, .comparison-grid, .about-container { grid-template-columns: 1fr; }
-            section { padding: 2.5rem 0; }
+            section { padding: 3rem 0; }
             .hero { min-height: 80vh; padding: 2rem 1.5rem; }
             .about-image { max-width: 230px; margin: 0 auto; }
             .intro-box { padding: 2rem 1.5rem; }
@@ -784,13 +777,11 @@
         </svg>
     </a>
 
-    <div class="live-viewers">
-        <div class="live-dot"></div>
-        <span class="live-viewers-text"><span class="live-viewers-number" id="live-viewers-count">31</span> pessoas vendo agora</span>
-    </div>
+    <!-- live viewers removido -->
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-grain"></div>
         <div class="hero-container">
             <div class="hero-badge">🎓 Curso em Vídeo &nbsp;·&nbsp; 3 Módulos &nbsp;·&nbsp; 11 Aulas &nbsp;·&nbsp; 🤖 App com I.A. Integrada</div>
 
@@ -838,8 +829,8 @@
     <!-- BONUS URGENCY BANNER -->
     <div class="bonus-banner">
         <div class="bonus-banner-dot"></div>
-        <span>⚡ <strong>Bônus exclusivo:</strong> primeiros 100 alunos ganham acesso vitalício ao <strong>app com I.A. integrada</strong> — Mapa da Coleção Perfeita</span>
-        <span class="bonus-banner-count" id="bonus-slots">73 vagas restantes</span>
+        <span>⚡ <strong>Oferta especial</strong> expira em <strong id="banner-countdown">--:--:--</strong></span>
+        <span class="bonus-banner-count">Domingo · 23h59</span>
     </div>
 
     <!-- INTRO / PROBLEM -->
@@ -1082,15 +1073,20 @@
         <div class="container">
             <div class="bonus-box">
                 <div class="bonus-tag">🎁 BÔNUS EXCLUSIVO — INCLUSO NO CURSO</div>
-                <h2 class="bonus-title">Para os Primeiros <em>100 Alunos</em></h2>
+                <h2 class="bonus-title">Bônus <em>Exclusivo</em> Incluso no Curso</h2>
 
                 <div class="bonus-slots-counter">
-                    <div class="bonus-slots-bar-wrap">
-                        <div class="bonus-slots-bar" id="bonus-bar"></div>
+                    <div style="text-align:center; margin-bottom: 0.5rem;">
+                        <span style="font-size:0.82rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:2px; font-weight:600;">Oferta expira em</span>
                     </div>
-                    <div class="bonus-slots-text">
-                        <span class="bonus-slots-taken" id="bonus-taken">27 alunos já garantiram</span>
-                        <span class="bonus-slots-left"><strong id="bonus-left">73</strong> vagas restantes</span>
+                    <div style="display:flex; justify-content:center; gap:0.8rem; margin-bottom:0.7rem;">
+                        <div class="countdown-item"><div class="countdown-number" id="bonus-days">00</div><div class="countdown-label">dias</div></div>
+                        <div class="countdown-item"><div class="countdown-number" id="bonus-hours">00</div><div class="countdown-label">horas</div></div>
+                        <div class="countdown-item"><div class="countdown-number" id="bonus-minutes">00</div><div class="countdown-label">min</div></div>
+                        <div class="countdown-item"><div class="countdown-number" id="bonus-seconds">00</div><div class="countdown-label">seg</div></div>
+                    </div>
+                    <div style="text-align:center;">
+                        <span style="font-size:0.85rem; color:rgba(255,255,255,0.45);">Domingo · 23h59 · Preço pode aumentar após essa data</span>
                     </div>
                 </div>
 
@@ -1119,14 +1115,9 @@
                     </div>
                     <div class="bonus-value-arrow">→</div>
                     <div class="bonus-value-item">
-                        <span class="bonus-value-label">Para os primeiros 100 alunos</span>
+                        <span class="bonus-value-label">Incluso no curso</span>
                         <span class="bonus-value-free">GRÁTIS</span>
                     </div>
-                </div>
-
-                <div class="bonus-urgency">
-                    <div class="bonus-urgency-dot"></div>
-                    <span>Quando as 100 vagas acabarem, o bônus <strong>desaparece definitivamente</strong></span>
                 </div>
 
                 <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="display:block;text-align:center;margin-top:2rem;" onclick="fbq('track', 'AddToCart');">Garantir Minha Vaga + Bônus</a>
@@ -1157,7 +1148,7 @@
                             <strong>Bônus: App Mapa da Coleção Perfeita com I.A.</strong>
                             <div class="bonus-highlight-meta">
                                 <span style="color:var(--gray-mid); text-decoration:line-through; font-size:0.85rem; white-space:nowrap;">R$ 97</span>
-                                <span class="price-includes-free">incluso para os 100 primeiros!</span>
+                                <span class="price-includes-free">incluso no curso</span>
                             </div>
                         </div>
                     </div>
@@ -1361,24 +1352,57 @@
                 });
             });
 
-            // Countdown
-            let timeLeft = 14 * 60 + 47;
-            function updateTimer() {
-                const m = Math.floor(timeLeft / 60);
-                const s = timeLeft % 60;
-                document.getElementById('countdown-minutes').textContent = String(m).padStart(2, '0');
-                document.getElementById('countdown-seconds').textContent = String(s).padStart(2, '0');
-                timeLeft = timeLeft > 0 ? timeLeft - 1 : 14 * 60 + 47;
+            // Countdown até domingo 23h59 (sempre o próximo domingo)
+            function getNextSunday2359() {
+                const now = new Date();
+                const brt = new Date(now.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }));
+                const day = brt.getDay(); // 0=dom, 1=seg...6=sab
+                const daysUntilSunday = day === 0 ? 7 : 7 - day; // se hoje é domingo, próximo domingo
+                const target = new Date(brt);
+                target.setDate(brt.getDate() + daysUntilSunday);
+                target.setHours(23, 59, 0, 0);
+                return target;
             }
-            updateTimer();
-            setInterval(updateTimer, 1000);
 
-            // Live viewers
-            const lv = document.getElementById('live-viewers-count');
-            if (lv) {
-                lv.textContent = Math.floor(Math.random() * 34) + 12;
-                setInterval(() => { lv.textContent = Math.floor(Math.random() * 34) + 12; }, Math.random() * 7000 + 8000);
+            function updateBonusCountdown() {
+                const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }));
+                const target = getNextSunday2359();
+                const diff = target - now;
+
+                if (diff <= 0) {
+                    ['bonus-days','bonus-hours','bonus-minutes','bonus-seconds'].forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) el.textContent = '00';
+                    });
+                    const banner = document.getElementById('banner-countdown');
+                    if (banner) banner.textContent = '00:00:00';
+                    return;
+                }
+
+                const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                const pad = n => String(n).padStart(2, '0');
+
+                const dEl = document.getElementById('bonus-days');
+                const hEl = document.getElementById('bonus-hours');
+                const mEl = document.getElementById('bonus-minutes');
+                const sEl = document.getElementById('bonus-seconds');
+                if (dEl) dEl.textContent = pad(days);
+                if (hEl) hEl.textContent = pad(hours);
+                if (mEl) mEl.textContent = pad(minutes);
+                if (sEl) sEl.textContent = pad(seconds);
+
+                const banner = document.getElementById('banner-countdown');
+                if (banner) banner.textContent = `${pad(days)}d ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
             }
+
+            updateBonusCountdown();
+            setInterval(updateBonusCountdown, 1000);
+
+            // Live viewers removido
 
             // Economy counter
             const economyObserver = new IntersectionObserver(entries => {
