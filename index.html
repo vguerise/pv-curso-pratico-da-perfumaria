@@ -145,8 +145,7 @@
             50% { box-shadow: 0 0 0 13px rgba(37,211,102,0); }
         }
 
-        .floating-cta { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-        .floating-cta .cta-button { padding: 0.85rem 1.7rem; font-size: 0.92rem; box-shadow: 0 8px 28px rgba(232,93,4,0.4); }
+        .floating-cta { display: none; }
 
         .live-viewers { display: none; }
 
@@ -424,8 +423,49 @@
         .why-list-item { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.98rem; }
         .why-list-icon { color: var(--orange); flex-shrink: 0; margin-top: 0.2rem; }
 
-        /* COMPARISON */
-        .comparison-section { background: white; }
+        .comparison-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 860px;
+            margin: 2.5rem auto 0;
+        }
+        .comparison-card-item {
+            border-radius: 14px;
+            padding: 2rem;
+            position: relative;
+        }
+        .comparison-card-recommended {
+            border: 2px solid var(--success);
+            box-shadow: 0 8px 28px rgba(42,157,92,0.1);
+            order: 1;
+        }
+        .comparison-card-alt {
+            border: 2px solid var(--gray-light);
+            order: 2;
+        }
+        .comparison-card-badge {
+            position: absolute; top: -13px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--success); color: white;
+            padding: 0.3rem 1.2rem; border-radius: 20px;
+            font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 1px; white-space: nowrap;
+        }
+        .comparison-card-title {
+            font-size: 0.8rem; font-weight: 800;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 1.2rem; margin-top: 0.4rem;
+        }
+        .comparison-card-title-green { color: var(--success); }
+        .comparison-card-title-gray { color: var(--gray-mid); }
+        @media (max-width: 768px) {
+            .comparison-cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-card-recommended { order: 1; }
+            .comparison-card-alt { order: 2; }
+        }
 
         .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 1020px; margin: 3rem auto; }
 
@@ -500,7 +540,7 @@
         /* ABOUT */
         .about-section { background: white; }
         .about-container { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; max-width: 960px; margin: 3rem auto 0; }
-        .about-image { width: 100%; max-width: 330px; border-radius: 14px; box-shadow: 0 18px 55px rgba(0,0,0,0.1); }
+        .about-image { width: 100%; max-width: 330px; border-radius: 14px; box-shadow: 0 18px 55px rgba(0,0,0,0.1); display: block; margin: 0 auto; }
         .about-content { font-size: 1.08rem; line-height: 1.8; color: var(--gray-dark); }
         .about-content p { margin-bottom: 1.2rem; }
         .about-content strong { color: var(--black); font-weight: 700; }
@@ -607,9 +647,9 @@
         .price-includes-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.97rem; color: var(--charcoal); padding: 0.4rem 0; border-bottom: 1px solid var(--gray-light); }
         .price-includes-item:last-child { border-bottom: none; }
         .price-includes-item span:first-child { color: var(--success); font-weight: 700; flex-shrink: 0; }
-        .bonus-highlight { background: rgba(232,93,4,0.07); border-radius: 8px; padding: 0.7rem 0.8rem !important; margin: 0.4rem 0; border: 1.5px solid rgba(232,93,4,0.3) !important; align-items: flex-start !important; }
-        .bonus-highlight span:first-child { font-size: 1.1rem; margin-top: 0.1rem; }
-        .bonus-highlight-content { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+        .bonus-highlight { background: rgba(232,93,4,0.07); border-radius: 8px; padding: 0.9rem 1rem !important; margin: 0.4rem 0; border: 1.5px solid rgba(232,93,4,0.3) !important; align-items: flex-start !important; }
+        .bonus-highlight span:first-child { font-size: 1.1rem; margin-top: 0.1rem; flex-shrink: 0; }
+        .bonus-highlight-content { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-width: 0; }
         .bonus-highlight-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
         .price-includes-free { background: var(--orange); color: white; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.7rem; border-radius: 20px; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
 
@@ -701,10 +741,11 @@
 
         .bonus-feature {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.7rem;
             font-size: 0.97rem;
             color: rgba(255,255,255,0.82);
+            margin-bottom: 0.4rem;
         }
 
         .bonus-feature span { color: var(--orange); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
@@ -830,7 +871,6 @@
     <div class="bonus-banner">
         <div class="bonus-banner-dot"></div>
         <span>⚡ <strong>Oferta especial</strong> expira em <strong id="banner-countdown">--:--:--</strong></span>
-        <span class="bonus-banner-count">Domingo · 23h59</span>
     </div>
 
     <!-- INTRO / PROBLEM -->
@@ -1075,18 +1115,18 @@
                 <div class="bonus-tag">🎁 BÔNUS EXCLUSIVO — INCLUSO NO CURSO</div>
                 <h2 class="bonus-title">Bônus <em>Exclusivo</em> Incluso no Curso</h2>
 
-                <div class="bonus-slots-counter">
-                    <div style="text-align:center; margin-bottom: 0.5rem;">
-                        <span style="font-size:0.82rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:2px; font-weight:600;">Oferta expira em</span>
+                <div class="bonus-slots-counter" style="background:linear-gradient(135deg,#c62828,#8b0000); border-radius:14px; padding:1.8rem 1.5rem; margin:1.5rem 0; box-shadow:0 8px 28px rgba(198,40,40,0.35);">
+                    <div style="text-align:center; margin-bottom: 1rem;">
+                        <span style="font-size:0.78rem; color:rgba(255,255,255,0.75); text-transform:uppercase; letter-spacing:2px; font-weight:700;">⏰ Oferta expira em</span>
                     </div>
-                    <div style="display:flex; justify-content:center; gap:0.8rem; margin-bottom:0.7rem;">
-                        <div class="countdown-item"><div class="countdown-number" id="bonus-days">00</div><div class="countdown-label">dias</div></div>
-                        <div class="countdown-item"><div class="countdown-number" id="bonus-hours">00</div><div class="countdown-label">horas</div></div>
-                        <div class="countdown-item"><div class="countdown-number" id="bonus-minutes">00</div><div class="countdown-label">min</div></div>
-                        <div class="countdown-item"><div class="countdown-number" id="bonus-seconds">00</div><div class="countdown-label">seg</div></div>
+                    <div style="display:flex; justify-content:center; gap:1rem; margin-bottom:1rem;">
+                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-days">00</div><div class="countdown-label">dias</div></div>
+                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-hours">00</div><div class="countdown-label">horas</div></div>
+                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-minutes">00</div><div class="countdown-label">min</div></div>
+                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-seconds">00</div><div class="countdown-label">seg</div></div>
                     </div>
                     <div style="text-align:center;">
-                        <span style="font-size:0.85rem; color:rgba(255,255,255,0.45);">Domingo · 23h59 · Preço pode aumentar após essa data</span>
+                        <span style="font-size:0.82rem; color:rgba(255,255,255,0.6);">Domingo · 23h59 · Preço pode aumentar após essa data</span>
                     </div>
                 </div>
 
@@ -1157,20 +1197,6 @@
 
                 <div class="price-comparison">Investimento menor que o valor de um perfume comprado errado.</div>
 
-                <div class="countdown-container" style="margin: 1.5rem auto;">
-                    <div class="countdown-title">⏰ Oferta por tempo limitado:</div>
-                    <div class="countdown-timer" id="countdown-timer">
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="countdown-minutes">14</div>
-                            <div class="countdown-label">Minutos</div>
-                        </div>
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="countdown-seconds">47</div>
-                            <div class="countdown-label">Segundos</div>
-                        </div>
-                    </div>
-                </div>
-
                 <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" style="width:100%;display:block;text-align:center;margin-top:1.4rem;" onclick="fbq('track', 'AddToCart');">Quero aprender perfumaria de verdade</a>
 
                 <div class="trust-badges">
@@ -1214,24 +1240,24 @@
             <h2 class="section-title">Por que não aprender no <em>YouTube?</em></h2>
             <p class="section-subtitle">Você pode. Mas conteúdo solto não constrói conhecimento de verdade.</p>
 
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:860px; margin:2.5rem auto 0;">
-                <div style="border:2px solid var(--gray-light); border-radius:14px; padding:2rem;">
-                    <div style="font-size:0.8rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--gray-mid); margin-bottom:1.2rem;">YouTube e PDFs gratuitos</div>
-                    <div style="display:flex; flex-direction:column; gap:0.85rem;">
-                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Vídeos soltos, sem progressão lógica</div>
-                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Sem profundidade real — você assiste mas não aprende</div>
-                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Ninguém te ensina a construir uma visão completa</div>
-                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Ninguém te ensina a montar uma coleção</div>
-                    </div>
-                </div>
-                <div style="border:2px solid var(--success); border-radius:14px; padding:2rem; position:relative; box-shadow: 0 8px 28px rgba(42,157,92,0.1);">
-                    <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--success); color:white; padding:0.3rem 1.2rem; border-radius:20px; font-size:0.7rem; font-weight:700; letter-spacing:1px; white-space:nowrap;">⭐ RECOMENDADO</div>
-                    <div style="font-size:0.8rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--success); margin-bottom:1.2rem;">Curso Prático da Perfumaria</div>
+            <div class="comparison-cards-grid">
+                <div class="comparison-card-item comparison-card-recommended">
+                    <div class="comparison-card-badge">⭐ RECOMENDADO</div>
+                    <div class="comparison-card-title comparison-card-title-green">Curso Prático da Perfumaria</div>
                     <div style="display:flex; flex-direction:column; gap:0.85rem;">
                         <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--charcoal);"><span style="color:var(--success); flex-shrink:0;">✓</span>3 módulos em progressão lógica, do zero ao avançado</div>
                         <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--charcoal);"><span style="color:var(--success); flex-shrink:0;">✓</span>Conhecimento estruturado que você realmente absorve</div>
                         <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--charcoal);"><span style="color:var(--success); flex-shrink:0;">✓</span>Você sai com uma visão completa do mundo da perfumaria</div>
                         <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--charcoal);"><span style="color:var(--success); flex-shrink:0;">✓</span>Criado por quem tem +100 perfumes e já errou muito</div>
+                    </div>
+                </div>
+                <div class="comparison-card-item comparison-card-alt">
+                    <div class="comparison-card-title comparison-card-title-gray">YouTube e PDFs gratuitos</div>
+                    <div style="display:flex; flex-direction:column; gap:0.85rem;">
+                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Vídeos soltos, sem progressão lógica</div>
+                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Sem profundidade real — você assiste mas não aprende</div>
+                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Ninguém te ensina a construir uma visão completa</div>
+                        <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.95rem; color:var(--gray-dark);"><span style="color:var(--danger); flex-shrink:0;">✕</span>Ninguém te ensina a montar uma coleção</div>
                     </div>
                 </div>
             </div>
