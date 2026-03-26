@@ -633,14 +633,17 @@
             padding: 1.2rem 2rem;
             background: rgba(255,255,255,0.05);
             border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
-            flex-wrap: wrap;
         }
         .bonus-value-item { text-align: center; }
         .bonus-value-label { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
-        .bonus-value-price { font-size: 1.5rem; font-weight: 800; color: rgba(255,255,255,0.4); }
+        .bonus-value-price { font-size: 1.8rem; font-weight: 900; color: rgba(255,255,255,0.65); }
         .strikethrough { text-decoration: line-through; }
         .bonus-value-arrow { font-size: 1.5rem; color: var(--orange); font-weight: 800; }
         .bonus-value-free { font-size: 1.8rem; font-weight: 900; color: var(--success); font-family: 'DM Sans', sans-serif; }
+        @media (max-width: 768px) {
+            .bonus-value-row { flex-direction: column; gap: 0.8rem; padding: 1.2rem 1.5rem; }
+            .bonus-value-arrow { transform: rotate(90deg); }
+        }
 
         /* PRICE INCLUDES */
         .price-includes {
@@ -1120,15 +1123,15 @@
                 <div class="bonus-tag">🎁 BÔNUS EXCLUSIVO — INCLUSO NO CURSO</div>
                 <h2 class="bonus-title">Bônus <em>Exclusivo</em> Incluso no Curso</h2>
 
-                <div class="bonus-slots-counter" style="background:linear-gradient(135deg,#c62828,#8b0000); border-radius:14px; padding:1.8rem 1.5rem; margin:1.5rem 0; box-shadow:0 8px 28px rgba(198,40,40,0.35);">
+                <div class="bonus-slots-counter" style="background:linear-gradient(135deg,#c62828,#8b0000); border-radius:14px; padding:1.8rem 1rem; margin:1.5rem 0; box-shadow:0 8px 28px rgba(198,40,40,0.35); overflow:hidden;">
                     <div style="text-align:center; margin-bottom: 1rem;">
                         <span style="font-size:0.78rem; color:rgba(255,255,255,0.75); text-transform:uppercase; letter-spacing:2px; font-weight:700;">⏰ Oferta expira em</span>
                     </div>
-                    <div style="display:flex; justify-content:center; gap:1rem; margin-bottom:1rem;">
-                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-days">00</div><div class="countdown-label">dias</div></div>
-                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-hours">00</div><div class="countdown-label">horas</div></div>
-                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-minutes">00</div><div class="countdown-label">min</div></div>
-                        <div class="countdown-item" style="min-width:64px;"><div class="countdown-number" id="bonus-seconds">00</div><div class="countdown-label">seg</div></div>
+                    <div style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:1rem; flex-wrap:nowrap;">
+                        <div class="countdown-item" style="min-width:56px; max-width:72px; flex:1;"><div class="countdown-number" id="bonus-days">00</div><div class="countdown-label">dias</div></div>
+                        <div class="countdown-item" style="min-width:56px; max-width:72px; flex:1;"><div class="countdown-number" id="bonus-hours">00</div><div class="countdown-label">horas</div></div>
+                        <div class="countdown-item" style="min-width:56px; max-width:72px; flex:1;"><div class="countdown-number" id="bonus-minutes">00</div><div class="countdown-label">min</div></div>
+                        <div class="countdown-item" style="min-width:56px; max-width:72px; flex:1;"><div class="countdown-number" id="bonus-seconds">00</div><div class="countdown-label">seg</div></div>
                     </div>
                     <div style="text-align:center;">
                         <span style="font-size:0.82rem; color:rgba(255,255,255,0.6);">Domingo · 23h59 · Preço pode aumentar após essa data</span>
@@ -1148,7 +1151,7 @@
                             <span class="bonus-feature"><span>✓</span> Diagnóstico personalizado da sua coleção</span>
                             <span class="bonus-feature"><span>✓</span> Sugestões de compra baseadas no seu perfil</span>
                             <span class="bonus-feature"><span>✓</span> Classificação inteligente por ocasião, clima e perfil</span>
-                            <span class="bonus-feature"><span>✓</span> Acesso <strong>vitalício</strong> — paga uma vez, usa para sempre</span>
+                            <span class="bonus-feature"><span>✓</span> Acesso <strong>vitalício</strong></span>
                         </div>
                     </div>
                 </div>
