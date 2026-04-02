@@ -171,15 +171,25 @@
             content: '';
             position: absolute; inset: 0;
             background-image: url('images/victor-terno.jpg');
-            background-size: cover; background-position: center right;
+            background-size: cover; background-position: 75% center;
             opacity: 0.52; z-index: 1;
         }
 
         .hero::after {
             content: '';
             position: absolute; inset: 0;
-            background: linear-gradient(to right, rgba(10,10,10,0.96) 25%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.08) 100%);
+            background: linear-gradient(to right, rgba(10,10,10,0.97) 20%, rgba(10,10,10,0.75) 45%, rgba(10,10,10,0.2) 100%);
             z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero::before {
+                background-position: 80% center;
+                opacity: 0.35;
+            }
+            .hero::after {
+                background: linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.75) 60%, rgba(10,10,10,0.92) 100%);
+            }
         }
 
         .hero-container { max-width: 880px; width: 100%; position: relative; z-index: 2; }
