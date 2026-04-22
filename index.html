@@ -557,12 +557,13 @@
         .guarantee-text { color: var(--gray-mid); font-size: 0.92rem; }
 
         /* TESTIMONIALS */
-        .testimonials-section { background: white; }
+        .testimonials-section { background: var(--black); }
+        .testimonials-section .section-title { color: white; }
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(295px, 1fr)); gap: 1.4rem; margin-top: 3rem; }
-        .testimonial-card { border-radius: 12px; overflow: hidden; border: 2px solid var(--gray-light); transition: all 0.3s; }
+        .testimonial-card { border-radius: 12px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); transition: all 0.3s; }
         .testimonial-card:hover { border-color: var(--orange); box-shadow: 0 7px 28px rgba(232,93,4,0.1); transform: translateY(-3px); }
         .testimonial-image { width: 100%; height: auto; display: block; }
-        .testimonial-caption { padding: 0.85rem 1.2rem; background: white; text-align: center; font-size: 0.87rem; color: var(--gray-mid); font-weight: 600; }
+        .testimonial-caption { padding: 0.85rem 1.2rem; background: rgba(255,255,255,0.05); text-align: center; font-size: 0.87rem; color: rgba(255,255,255,0.45); font-weight: 600; }
         .t-verified { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--success); }
 
         /* FAQ */
@@ -956,6 +957,9 @@
                 <p class="intro-text"><strong>E o pior?</strong> Você continua sem saber exatamente por que errou.</p>
                 <p class="intro-text">Enquanto não entende o básico, cada compra vira aposta.</p>
                 <p class="intro-cta-line">E perfume não é barato para virar aposta.</p>
+                <div style="text-align:center; margin-top:2rem;">
+                    <a href="https://pay.hotmart.com/X104571170T?checkoutMode=10" class="cta-button" onclick="fbq('track', 'AddToCart');">Quero melhorar minha imagem com a perfumaria!</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1296,14 +1300,16 @@
     <!-- TESTIMONIALS -->
     <section class="testimonials-section">
         <div class="container">
-            <span class="section-label">Prova social</span>
-            <h2 class="section-title">Homens que <em>Pararam de Errar</em></h2>
-            <p class="section-subtitle">Mais segurança ao comprar. Menos arrependimento. Escolhas mais inteligentes.</p>
+            <span class="section-label">Quem já passou por aqui</span>
+            <h2 class="section-title">Palavras de quem <em>já viveu na prática</em></h2>
 
             <div class="testimonials-grid">
-                <div class="testimonial-card"><img src="images/depoimento-1.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
-                <div class="testimonial-card"><img src="images/depoimento-2.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Instagram Real</span></div></div>
-                <div class="testimonial-card"><img src="images/depoimento-3.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption"><span class="t-verified">✓ Depoimento Real</span></div></div>
+                <div class="testimonial-card"><img src="images/depoimento-1.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption">Depoimento aluno</div></div>
+                <div class="testimonial-card"><img src="images/depoimento-2.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption">Depoimento aluno</div></div>
+                <div class="testimonial-card"><img src="images/depoimento-3.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption">Depoimento aluno</div></div>
+                <div class="testimonial-card"><img src="images/depoimento-4.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption">Depoimento aluno</div></div>
+                <div class="testimonial-card"><img src="images/depoimento-5.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption">Depoimento aluno</div></div>
+                <div class="testimonial-card"><img src="images/depoimento-6.jpg" alt="Depoimento aluno" class="testimonial-image"><div class="testimonial-caption">Depoimento aluno</div></div>
             </div>
         </div>
     </section>
